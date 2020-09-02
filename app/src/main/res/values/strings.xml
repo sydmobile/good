@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Good</string>
+    <string name="launcher_title">好好学习，天天向上</string>
+    <string name="main_title">好好学习，天天向上</string>
+    <string name="ensure">确认</string>
+    <string name="cancel">取消</string>
+</resources>

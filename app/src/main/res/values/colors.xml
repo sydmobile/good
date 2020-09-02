@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#085291</color>
+    <color name="colorPrimaryDark">#085291</color>
+    <color name="colorIcon">#1295db</color>
+    <color name="colorPrimarySurface">#81d0f5</color>
+    <color name="colorSecondary">#db5812</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorBackground">#F1F1F1</color>
+
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_split_primary">#EEEEEE</color>
+    <color name="color_split_PrimaryDark">#DDDDDD</color>
+    <color name="colorPrimaryTxt">#333333</color>
+    <color name="colorSecondaryTxt">#666666</color>
+    <color name="colorThirdTxt">#999999</color>
+</resources>
