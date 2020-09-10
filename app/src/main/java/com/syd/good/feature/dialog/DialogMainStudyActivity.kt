@@ -64,6 +64,14 @@ class DialogMainStudyActivity : BaseActivity() {
                 val view = layoutInflater.inflate(R.layout.main_item_card, parent, false)
                 val viewHolder = ContentViewHolder(view)
                 viewHolder.cardView?.setOnClickListener {
+                    when(datas[viewHolder.adapterPosition].type){
+                        1->{
+
+                        }
+                        2->{
+
+                        }
+                    }
                     // TODO 下一步工作
                     DialogFragmentStudy.newInstance().show(supportFragmentManager, null)
                 }

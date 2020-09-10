@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/bt_home"
+            android:textAllCaps="false"
+            android:text="@string/fragment_home" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_margin="@dimen/margin_small"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_my"
+            android:text="@string/fragment_my" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_margin="@dimen/margin_small"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_other"
+            android:text="@string/fragment_other" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/bt_add"
+            android:textAllCaps="false"
+            android:text="@string/fragment_add" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/bt_add1"
+            android:textAllCaps="false"
+            android:text="add1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_margin="@dimen/margin_small"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_replace"
+            android:text="@string/fragment_replace" />
+    </LinearLayout>
+</LinearLayout>

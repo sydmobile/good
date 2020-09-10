@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">Good</string>
-    <string name="launcher_title">好好学习，天天向上</string>
-    <string name="main_title">好好学习，天天向上</string>
     <string name="ensure">确认</string>
     <string name="cancel">取消</string>
+    <string name="launcher_title">好好学习，天天向上</string>
+    <string name="main_title">好好学习，天天向上</string>
+    <string name="fragment_add">add</string>
+    <string name="fragment_replace">replace</string>
+    <string name="fragment_next">下一个</string>
+    <string name="fragment_close">关 闭</string>
+    <string name="fragment_home">home</string>
+    <string name="fragment_my">我的</string>
+    <string name="fragment_other">其他</string>
 </resources>

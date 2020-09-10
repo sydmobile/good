@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButton
+        app:backgroundTint="@color/colorSecondary"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/fragment_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_add" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_margin="@dimen/margin_small"
+        app:backgroundTint="@color/colorSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_close"
+        android:id="@+id/tv_close" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_margin="@dimen/margin_small"
+        app:backgroundTint="@color/colorSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点我"
+        android:id="@+id/bt_click" />
+</LinearLayout>
