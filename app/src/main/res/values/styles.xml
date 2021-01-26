@@ -20,4 +20,11 @@
         <item name="android:navigationBarColor">#00FFFFFF</item>
     </style>
 
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">2dp</item>
+    </style>
+
+
+
 </resources>

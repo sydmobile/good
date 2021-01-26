@@ -44,17 +44,19 @@ public class MDCMainActivity extends BaseActivity {
 
     @Override
     protected void init(Bundle savedInstanceState) {
-
+        // wwww
         // 标准化流程
-        List<CommonEntity> datas = new ArrayList<>();
-        // TODO 添加数据
+        List<CommonEntity> datas =
+
+                new ArrayList<>();
+
         datas.add(new CommonEntity("Material Design", "内容", CommonType.TYPE_TITLE, null));
         datas.add(new CommonEntity("Material Design", "TabLayout", CommonType.TYPE_CONTENT_COMMON, null));
         datas.add(new CommonEntity("Material Design", "TabLayout+ViewPager", CommonType.TYPE_CONTENT_COMMON, null));
         CommonAdapter.CallBack callBack = new CommonAdapter.CallBack() {
             @Override
             public void onClick(CommonEntity commonEntity) {
-                // TODO 具体流程
+
                 switch (commonEntity.getmContent()) {
                     case "TabLayout":
                         Intent intent = new Intent(MDCMainActivity.this, MDCTabLayoutActivity.class);

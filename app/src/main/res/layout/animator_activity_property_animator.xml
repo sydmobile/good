@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_margin="@dimen/margin_small"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="ValueAnimator"
+            android:id="@+id/bt_valueanimator" />
+
+        <Button
+            android:layout_margin="@dimen/margin_small"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="平移动画"
+            android:id="@+id/bt_translate" />
+
+        <Button
+            android:layout_margin="@dimen/margin_small"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="缩放动画"
+            android:id="@+id/bt_scale" />
+
+        <Button
+            android:layout_margin="@dimen/margin_small"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="旋转动画"
+            android:id="@+id/bt_roate" />
+
+        <Button
+            android:layout_margin="@dimen/margin_small"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="透明动画"
+            android:id="@+id/bt_alpha" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/bt_roateX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RotationX"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/margin_small" />
+
+        <Button
+            android:id="@+id/bt_roateY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RotationY"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/margin_small" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/bt_target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动画目标" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -50,14 +50,14 @@ public class EventBusMainActivity extends BaseActivity {
 
         // 标准化流程
         List<CommonEntity> datas = new ArrayList<>();
-        // TODO 添加数据
+
         datas.add(new CommonEntity("EventBust 学习", "", CommonType.TYPE_TITLE, null));
         datas.add(new CommonEntity("EventBust 学习", "进入第二页", CommonType.TYPE_CONTENT_COMMON, null));
         datas.add(new CommonEntity("EventBust 学习", "向第二个页面发送消息", CommonType.TYPE_CONTENT_COMMON, null));
         CommonAdapter.CallBack callBack = new CommonAdapter.CallBack() {
             @Override
             public void onClick(CommonEntity commonEntity) {
-                // TODO 具体流程
+
                 switch (commonEntity.getmContent()) {
                     case "向第二个页面发送消息":
                         EventBus.getDefault().postSticky("来自第一个页面的信息");

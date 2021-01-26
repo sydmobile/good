@@ -72,7 +72,7 @@ class TestMainActivity : BaseActivity() {
                 viewHolder.cardView?.setOnClickListener {
                     val data = datas[viewHolder.adapterPosition]
                     when (data.type) {
-                        // TODO 测试内容
+                        //  测试内容
                         2 -> {
                             Toast.makeText(this@TestMainActivity, data.title, Toast.LENGTH_SHORT)
                                 .show()

@@ -3,7 +3,7 @@
     <string name="ensure">确认</string>
     <string name="cancel">取消</string>
     <string name="launcher_title">好好学习，天天向上</string>
-    <string name="main_title">好好学习，天天向上</string>
+    <string name="main_title">hello world!</string>
     <string name="fragment_add">add</string>
     <string name="fragment_replace">replace</string>
     <string name="fragment_next">下一个</string>
@@ -11,4 +11,5 @@
     <string name="fragment_home">home</string>
     <string name="fragment_my">我的</string>
     <string name="fragment_other">其他</string>
+    <string name="info">Crossfade animations (also known as dissolve) gradually fade out one View or ViewGroup while simultaneously fading in another. This animation is useful for situations where you want to switch content or views in your app. The crossfade animation shown here uses ViewPropertyAnimator, which is available for Android 3.1 (API level 12) and higher.Here\'s an example of a crossfade from a progress indicator to some text content.</string>
 </resources>

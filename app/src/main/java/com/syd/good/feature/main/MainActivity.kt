@@ -1,5 +1,6 @@
 package com.syd.good.feature.main
 
+import android.app.Service
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,39 +14,58 @@ import com.google.android.material.card.MaterialCardView
 import com.syd.good.R
 import com.syd.good.base.BaseActivity
 import com.syd.good.data.MainContentData
+import com.syd.good.feature.animator.*
 import com.syd.good.feature.dialog.DialogMainStudyActivity
+import com.syd.good.feature.drawableresource.DrawableResourceActivity
 import com.syd.good.feature.eventbus.EventBusMainActivity
 import com.syd.good.feature.fragment.FragmentMainActivity
 import com.syd.good.feature.fragment.FragmentStaticActivity
+import com.syd.good.feature.imageload.PicassoBaseUseActivity
+import com.syd.good.feature.mdc.MDCButtonsActivity
 import com.syd.good.feature.mdc.MDCMainActivity
-import com.syd.good.feature.mdc.MDCTabLayoutActivity
+import com.syd.good.feature.netutils.NetUtilsActivity
+import com.syd.good.feature.service.MyServiceConnection
+import com.syd.good.feature.service.ServiceTestActivity
+import com.syd.good.feature.service.TestService
+import com.syd.good.feature.sqlite.SQLiteBaseActivity
+import com.syd.good.feature.tabmenu.TabHostActivity
 import com.syd.good.feature.test.TestMainActivity
+import com.syd.good.feature.webview.WebViewUseActivity
+import com.syd.good.feature.xmlparse.JsonParseActivity
+import com.syd.good.feature.xmlparse.XmlParseActivity
+import com.syd.good.utils.L
 
 class MainActivity : BaseActivity() {
     override fun layoutId() = R.layout.activity_main
     val datas = listOf(
         MainContentData("Hello", 1, MainActivity::class.java),
+
         MainContentData("Dialog", 2, DialogMainStudyActivity::class.java),
         MainContentData("EventBus", 2, EventBusMainActivity::class.java),
         MainContentData("Fragment", 2, FragmentMainActivity::class.java),
         MainContentData("Fragment 静态添加", 2, FragmentStaticActivity::class.java),
         MainContentData("Test", 2, TestMainActivity::class.java),
+        MainContentData("MDC", 1, TestMainActivity::class.java),
         MainContentData("Material Design", 2, MDCMainActivity::class.java),
-        MainContentData("Heldddlo", 2, MainActivity::class.java),
-        MainContentData("dd", 2, MainActivity::class.java),
-        MainContentData("Helwwwwwwwlo", 2, MainActivity::class.java),
-        MainContentData("Hewllo", 2, MainActivity::class.java),
-        MainContentData("Hello", 1, MainActivity::class.java),
-        MainContentData("Hello", 2, MainActivity::class.java),
-        MainContentData("Hello", 2, MainActivity::class.java),
-        MainContentData("Helloffff", 2, MainActivity::class.java),
-        MainContentData("Helloffff", 2, MainActivity::class.java),
-        MainContentData("Hello", 2, MainActivity::class.java),
-        MainContentData("Helldddo", 2, MainActivity::class.java),
-        MainContentData("Heldddlo", 2, MainActivity::class.java),
-        MainContentData("dd", 2, MainActivity::class.java),
-        MainContentData("Helwwwwwwwlo", 2, MainActivity::class.java),
-        MainContentData("Hewllo", 2, MainActivity::class.java)
+        MainContentData("Button", 2, MDCButtonsActivity::class.java),
+        MainContentData("Drawable 资源", 1, MainActivity::class.java),
+        MainContentData("layer-list", 2, DrawableResourceActivity::class.java),
+        MainContentData("动画", 1, MainActivity::class.java),
+        MainContentData("属性动画", 2, AnimatorActivity::class.java),
+        MainContentData("淡入淡出视图", 2, CrossfadeActivity::class.java),
+        MainContentData("卡片翻转", 2, CardFlipActivity::class.java),
+        MainContentData("补间动画", 2, ViewAnimationActivity::class.java),
+        MainContentData("插值器", 2, InterpolatorBaseUseActivity::class.java),
+        MainContentData("揭露动画", 2, RevealAnimationActivity::class.java),
+        MainContentData("Carson博客学习", 1, MainActivity::class.java),
+        MainContentData("XML解析", 2, XmlParseActivity::class.java),
+        MainContentData("Json解析", 2, JsonParseActivity::class.java),
+        MainContentData("底部菜单TabHost", 2, TabHostActivity::class.java),
+        MainContentData("Picasso", 2, PicassoBaseUseActivity::class.java),
+        MainContentData("WebView", 2, WebViewUseActivity::class.java),
+        MainContentData("监听网络变化", 2, NetUtilsActivity::class.java),
+        MainContentData("前台服务、通知", 2, ServiceTestActivity::class.java),
+        MainContentData("数据库操作", 2, SQLiteBaseActivity::class.java)
     )
 
     override fun init(savedInstanceState: Bundle?) {
@@ -56,6 +76,39 @@ class MainActivity : BaseActivity() {
         layoutManager.spanSizeLookup = MySanSizeLookup()
         recyclerView.layoutManager = layoutManager
 
+        val intent = Intent(this, TestService::class.java)
+        bindService(intent, MyServiceConnection(), Service.BIND_AUTO_CREATE)
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        L.e(TAG, "onCreate")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        L.e(TAG, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        L.e(TAG, "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        L.e(TAG, "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        L.e(TAG, "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        L.e(TAG, "onDestroy")
     }
 
     inner class MySanSizeLookup : SpanSizeLookup() {

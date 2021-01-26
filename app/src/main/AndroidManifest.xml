@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.syd.good">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -9,8 +10,10 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
+        tools:replace="android:allowBackup"
         android:name=".App"
         android:allowBackup="false"
         android:icon="@mipmap/ic_logo_good"
@@ -38,6 +41,48 @@
         <activity android:name=".feature.test.TestMainActivity" />
         <activity android:name=".feature.mdc.MDCMainActivity" />
         <activity android:name=".feature.mdc.MDCTabLayoutActivity" />
+        <activity android:name=".feature.drawableresource.DrawableResourceActivity" />
+        <activity android:name=".feature.animator.AnimatorActivity" />
+        <activity android:name=".feature.animator.CrossfadeActivity" />
+        <activity android:name=".feature.animator.CardFlipActivity" />
+        <activity android:name=".feature.animator.ViewAnimationActivity" />
+        <activity android:name=".feature.animator.ViewAnimationLauncherActivity" />
+        <activity android:name=".feature.animator.ViewAnimationRightToLeftActivity" />
+        <activity android:name=".feature.animator.AnimatorInterpolatorActivity" />
+        <activity android:name=".feature.animator.InterpolatorBaseUseActivity" />
+        <activity android:name=".feature.animator.RevealAnimationActivity" />
+        <activity android:name=".feature.mdc.CoordinatorActivity" />
+        <activity android:name=".feature.imagescaletype.ImageScaleActivity" />
+        <activity android:name=".feature.mdc.MDCButtonsActivity" />
+        <activity android:name=".feature.xmlparse.XmlParseActivity" />
+        <activity android:name=".feature.xmlparse.JsonParseActivity" />
+        <activity android:name=".feature.viewpager.ViewPagerActivity" />
+        <activity android:name=".feature.tabmenu.TabHostActivity" />
+        <activity android:name=".feature.imageload.PicassoBaseUseActivity" />
+        <activity android:name=".feature.webview.WebViewUseActivity" />
+        <activity android:name=".feature.netutils.NetUtilsActivity" />
+        <activity android:name=".feature.service.ServiceTestActivity" />
+        <activity android:name=".feature.sqlite.SQLiteBaseActivity" />
+
+        <service android:name=".feature.netutils.MyService" />
+        <service android:name=".feature.service.MyForegroundService" />
+        <service android:name=".feature.service.MyRemoteService"
+            android:process=":remote"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="com.syd.good.feature.service.AIDL_Service1"/>
+            </intent-filter>
+
+        </service>
+        <service android:name=".feature.service.TestService" />
+
+        <receiver android:name=".feature.service.MyNotificationClickBroadCasteReceiver"
+            android:permission=" ">
+            <intent-filter>
+                <action android:name="cancel_id"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

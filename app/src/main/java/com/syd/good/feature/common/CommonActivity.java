@@ -41,12 +41,12 @@ public class CommonActivity extends BaseActivity {
     protected void init(Bundle savedInstanceState) {
         // 标准化流程
         List<CommonEntity> datas = new ArrayList<>();
-        // TODO 添加数据
+        // 添加数据
         datas.add(new CommonEntity("标题", "内容", CommonType.TYPE_CONTENT_COMMON, null));
         CommonAdapter.CallBack callBack = new CommonAdapter.CallBack() {
             @Override
             public void onClick(CommonEntity commonEntity) {
-                // TODO 具体流程
+                // 具体业务流程
             }
         };
         actionInit(datas, callBack);

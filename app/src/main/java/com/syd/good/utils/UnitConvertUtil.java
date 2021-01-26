@@ -15,6 +15,7 @@ public class UnitConvertUtil {
 
     /**
      * byte[] 转 16进制字符串
+     *
      * @param bytes byte数组
      * @return String
      */
@@ -28,7 +29,6 @@ public class UnitConvertUtil {
 
         return new String(hexChars);
     }
-
 
 
     /**

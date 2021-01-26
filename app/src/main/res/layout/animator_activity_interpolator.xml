@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_margin="@dimen/margin_small"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="start"
+            android:id="@+id/bt_start" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="default" />
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="accelerateDecelerate" />
+
+        <TextView
+
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="accelerate" />
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="anticipate" />
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="anticipateOvershoot" />
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bounce" />
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cycle" />
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="decelerate" />
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="linear" />
+
+        <TextView
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/tv_target_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="overshoot" />
+    </LinearLayout>
+
+</LinearLayout>
