@@ -16,8 +16,8 @@ import com.syd.good.utils.adapter.BaseViewHolder;
  * @version 1.0
  */
 public class CommonAdapter extends BaseAdapter<CommonEntity> {
-    private Context mContext;
-    private CallBack mCallBack;
+    private final Context mContext;
+    private final CallBack mCallBack;
 
     public CommonAdapter(Context context, CallBack callBack) {
         this.mContext = context;
@@ -29,6 +29,7 @@ public class CommonAdapter extends BaseAdapter<CommonEntity> {
         return getDatas().get(position).getmType();
     }
 
+    @SuppressWarnings("SwitchStatementWithTooFewBranches")
     @NonNull
     @Override
     public BaseViewHolder<CommonEntity> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

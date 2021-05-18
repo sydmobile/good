@@ -25,6 +25,10 @@
         <item name="cornerSize">2dp</item>
     </style>
 
+    <style name="AppThemeWhiteActionBar" parent="Theme.MaterialComponents.DayNight.Bridge">
+        <item name="overlapAnchor">false</item>
+    </style>
+
 
 
 </resources>

@@ -4,14 +4,22 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewbinding.ViewBinding;
 
 import com.syd.good.utils.ActivityManagerUtils;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
 
 /**
  * 说明：Activity 基类
@@ -43,6 +51,17 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        Type type = getClass().getGenericSuperclass();
+//        if (type instanceof ParameterizedType) {
+//            @SuppressWarnings("unchecked")
+//            Class<T> cls = (Class<T>) (((ParameterizedType) type).getActualTypeArguments()[0]);
+//            try {
+//                Method method = cls.getMethod("inflate", LayoutInflater.class);
+//                binding = (T) method.invoke(null, getLayoutInflater());
+//            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+//                e.printStackTrace();
+//            }
+//        }
         setContentView(layoutId());
         mUnbinder = ButterKnife.bind(this);
         // 入栈

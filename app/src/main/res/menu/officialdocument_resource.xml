@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/item1"
+        android:title="第一项"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="ifRoom|withText"/>
+    <group android:id="@+id/group">
+        <item android:id="@+id/group_item1"
+            android:title="group1"
+            android:icon="@drawable/ic_category_default"
+            android:onClick="onGroupItemClick"/>
+        <item android:id="@+id/group_item2"
+            android:title="group2"
+            android:icon="@drawable/ic_category_selected"
+            android:onClick="onGroupItemClick"/>
+    </group>
+    <item android:id="@+id/submenu"
+        android:title="submenu"
+        app:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_message">
+        <menu>
+            <item android:id="@+id/submenu_item1"
+                android:title="@string/app_name"/>
+        </menu>
+    </item>
+</menu>

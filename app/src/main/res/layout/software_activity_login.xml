@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beacon部署校验"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp" />
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_phone_number"
+            android:paddingLeft="10dp"
+            android:hint="请填写手机号"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_shape_eee" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#999"
+            android:layout_marginTop="10dp"
+            android:text="未注册的手机号验证后自动创建账户" />
+
+        <TextView
+            android:id="@+id/tv_send_code"
+            android:layout_marginTop="30dp"
+            android:text="发送验证码"
+            android:gravity="center"
+            android:textColor="@color/color_white"
+            android:background="@drawable/bg_btn_radius4_colorprimary"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/tv_info_collection"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码登录"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+</RelativeLayout>

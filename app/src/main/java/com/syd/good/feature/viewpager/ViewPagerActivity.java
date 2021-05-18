@@ -1,27 +1,17 @@
 package com.syd.good.feature.viewpager;
 
-import android.content.BroadcastReceiver;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.widget.TextView;
 
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.PagerAdapter;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.syd.good.R;
 import com.syd.good.base.BaseActivity;
-import com.syd.good.feature.common.CommonAdapter;
-import com.syd.good.feature.common.CommonEntity;
-import com.syd.good.feature.common.CommonType;
 import com.syd.good.utils.L;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * <p>
@@ -35,6 +25,7 @@ public class ViewPagerActivity extends BaseActivity {
 
     @BindView(R.id.vp)
     ViewPager vp;
+    private ArrayList<Fragment> fragmentList;
 
     @Override
     protected int layoutId() {
@@ -43,11 +34,10 @@ public class ViewPagerActivity extends BaseActivity {
 
     @Override
     protected void init(Bundle savedInstanceState) {
-
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                L.e(TAG,"onPageScrolled");
+                L.e(TAG, "onPageScrolled");
 
             }
 
@@ -63,7 +53,6 @@ public class ViewPagerActivity extends BaseActivity {
         });
 
     }
-
 
 
 }

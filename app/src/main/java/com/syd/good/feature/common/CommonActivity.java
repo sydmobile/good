@@ -1,5 +1,6 @@
 package com.syd.good.feature.common;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -18,10 +19,12 @@ import butterknife.BindView;
  * <p>
  * date: 2020/9/3 8:59
  * 普通通用的 Activity
+ *
  * @author syd
  * @version 1.0
  */
-public class CommonActivity extends BaseActivity {
+@SuppressLint("NonConstantResourceId")
+public abstract class CommonActivity extends BaseActivity {
 
     @BindView(R.id.rlv)
     RecyclerView rlv;
@@ -49,10 +52,22 @@ public class CommonActivity extends BaseActivity {
                 // 具体业务流程
             }
         };
-        actionInit(datas, callBack);
-
+        actionInit(createList(), createCallBack());
 
     }
+
+    /**
+     * 生成功能列表数据
+     * @return list
+     */
+    protected abstract List<CommonEntity> createList();
+
+    /**
+     * 创建回调
+     * @return 功能回调
+     */
+    protected abstract CommonAdapter.CallBack createCallBack();
+
 
     /**
      * 基本内容

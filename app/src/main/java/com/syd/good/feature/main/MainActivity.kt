@@ -3,6 +3,7 @@ package com.syd.good.feature.main
 import android.app.Service
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
+import com.syd.good.ConstraintLayoutActivity
 import com.syd.good.R
 import com.syd.good.base.BaseActivity
+import com.syd.good.carsonblog.a1socket.SocketClientActivity
+import com.syd.good.carsonblog.a2eventdispatcher.EventDispatcherActivity
 import com.syd.good.data.MainContentData
 import com.syd.good.feature.animator.*
 import com.syd.good.feature.dialog.DialogMainStudyActivity
@@ -24,19 +28,28 @@ import com.syd.good.feature.imageload.PicassoBaseUseActivity
 import com.syd.good.feature.mdc.MDCButtonsActivity
 import com.syd.good.feature.mdc.MDCMainActivity
 import com.syd.good.feature.netutils.NetUtilsActivity
+import com.syd.good.feature.officialdocument.AsimpleActivity
+import com.syd.good.feature.officialdocument.DrawableActivity
+import com.syd.good.feature.officialdocument.MenuActivity
+import com.syd.good.feature.recyclerview_study.RecyclerViewBaseActivity
 import com.syd.good.feature.service.MyServiceConnection
 import com.syd.good.feature.service.ServiceTestActivity
 import com.syd.good.feature.service.TestService
 import com.syd.good.feature.sqlite.SQLiteBaseActivity
 import com.syd.good.feature.tabmenu.TabHostActivity
 import com.syd.good.feature.test.TestMainActivity
+import com.syd.good.feature.viewbinding.ViewBindingActivity
 import com.syd.good.feature.webview.WebViewUseActivity
 import com.syd.good.feature.xmlparse.JsonParseActivity
 import com.syd.good.feature.xmlparse.XmlParseActivity
+import com.syd.good.software.BeaconInfoActivity
+import com.syd.good.software.login.LoginByPhoneActivity
 import com.syd.good.utils.L
 
 class MainActivity : BaseActivity() {
     override fun layoutId() = R.layout.activity_main
+
+
     val datas = listOf(
         MainContentData("Hello", 1, MainActivity::class.java),
 
@@ -57,6 +70,13 @@ class MainActivity : BaseActivity() {
         MainContentData("补间动画", 2, ViewAnimationActivity::class.java),
         MainContentData("插值器", 2, InterpolatorBaseUseActivity::class.java),
         MainContentData("揭露动画", 2, RevealAnimationActivity::class.java),
+        MainContentData("ViewBinding", 2, ViewBindingActivity::class.java),
+        MainContentData("RecyclerView", 2, RecyclerViewBaseActivity::class.java),
+        MainContentData("TabHost", 2, com.syd.good.feature.tabhost.TabHostActivity::class.java),
+        MainContentData("TabHostFragment", 2, com.syd.good.feature.tabhost.TabHostFragmentActivity::class.java),
+        MainContentData("TabHost测试", 2, com.syd.good.feature.tabhost.TabHostFActivity::class.java),
+
+
         MainContentData("Carson博客学习", 1, MainActivity::class.java),
         MainContentData("XML解析", 2, XmlParseActivity::class.java),
         MainContentData("Json解析", 2, JsonParseActivity::class.java),
@@ -65,10 +85,23 @@ class MainActivity : BaseActivity() {
         MainContentData("WebView", 2, WebViewUseActivity::class.java),
         MainContentData("监听网络变化", 2, NetUtilsActivity::class.java),
         MainContentData("前台服务、通知", 2, ServiceTestActivity::class.java),
-        MainContentData("数据库操作", 2, SQLiteBaseActivity::class.java)
+        MainContentData("数据库操作", 2, SQLiteBaseActivity::class.java),
+        MainContentData("Socket", 2, SocketClientActivity::class.java),
+        MainContentData("事件处理", 2, EventDispatcherActivity::class.java),
+
+        MainContentData("官方文档", 1, MainActivity::class.java),
+        MainContentData("构建首个应用", 2, AsimpleActivity::class.java),
+        MainContentData("可绘制对象", 2, DrawableActivity::class.java),
+        MainContentData("菜单", 2, MenuActivity::class.java),
+        MainContentData("ConstraintLayout", 2, ConstraintLayoutActivity::class.java),
+
+        MainContentData("软著申请假页面", 1, MainActivity::class.java),
+        MainContentData("Beacon信息", 2, BeaconInfoActivity::class.java),
+        MainContentData("登录页面", 2, LoginByPhoneActivity::class.java)
     )
 
     override fun init(savedInstanceState: Bundle?) {
+        Log.e(javaClass.simpleName, "$taskId==")
         val recyclerView: RecyclerView = findViewById(R.id.rlv)
         val adapter = MainAdapter()
         recyclerView.adapter = adapter

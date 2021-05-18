@@ -1,6 +1,7 @@
 package com.syd.good.feature.xmlparse;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.syd.good.utils.L;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
@@ -154,6 +156,8 @@ public class XmlParseActivity extends BaseActivity {
                 L.e("name", language.getElementsByTagName("name").item(0).getTextContent());
                 L.e("usage", language.getElementsByTagName("usage").item(0).getTextContent());
             }
+
+
 
         } catch (IOException | ParserConfigurationException | SAXException e) {
             e.printStackTrace();

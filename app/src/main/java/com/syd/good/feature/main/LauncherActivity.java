@@ -2,6 +2,7 @@ package com.syd.good.feature.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -31,6 +32,7 @@ public class LauncherActivity extends BaseActivity {
 //                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
 //        );
         startAnimation();
+        Log.e(getClass().getSimpleName(),getTaskId()+"==");
     }
 
     private void startAnimation() {
