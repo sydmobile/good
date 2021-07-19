@@ -18,7 +18,11 @@ import com.syd.good.base.BaseActivity
 import com.syd.good.carsonblog.a1socket.SocketClientActivity
 import com.syd.good.carsonblog.a2eventdispatcher.EventDispatcherActivity
 import com.syd.good.data.MainContentData
+import com.syd.good.feature.aidl.BinderPoolActivity
+import com.syd.good.feature.aidl.IpcActivity
 import com.syd.good.feature.animator.*
+import com.syd.good.feature.customview.simple.CustomViewActivity
+import com.syd.good.feature.customview.simple.SimpleViewActivity
 import com.syd.good.feature.dialog.DialogMainStudyActivity
 import com.syd.good.feature.drawableresource.DrawableResourceActivity
 import com.syd.good.feature.eventbus.EventBusMainActivity
@@ -37,11 +41,16 @@ import com.syd.good.feature.service.ServiceTestActivity
 import com.syd.good.feature.service.TestService
 import com.syd.good.feature.sqlite.SQLiteBaseActivity
 import com.syd.good.feature.tabmenu.TabHostActivity
+import com.syd.good.feature.test.TestMain2JavaActivity
 import com.syd.good.feature.test.TestMainActivity
 import com.syd.good.feature.viewbinding.ViewBindingActivity
 import com.syd.good.feature.webview.WebViewUseActivity
 import com.syd.good.feature.xmlparse.JsonParseActivity
 import com.syd.good.feature.xmlparse.XmlParseActivity
+import com.syd.good.rwx.practicedraw1.Practicedraw1Activity
+import com.syd.good.rwx.practicedraw2.PaintDetail1Activity
+import com.syd.good.rwx.practicedraw2.PaintDetailActivity
+import com.syd.good.ryg.a3customview.ViewShowActivity
 import com.syd.good.software.BeaconInfoActivity
 import com.syd.good.software.login.LoginByPhoneActivity
 import com.syd.good.utils.L
@@ -52,17 +61,29 @@ class MainActivity : BaseActivity() {
 
     val datas = listOf(
         MainContentData("Hello", 1, MainActivity::class.java),
-
         MainContentData("Dialog", 2, DialogMainStudyActivity::class.java),
         MainContentData("EventBus", 2, EventBusMainActivity::class.java),
         MainContentData("Fragment", 2, FragmentMainActivity::class.java),
         MainContentData("Fragment 静态添加", 2, FragmentStaticActivity::class.java),
         MainContentData("Test", 2, TestMainActivity::class.java),
+        MainContentData("测试内容", 2, TestMain2JavaActivity::class.java),
+
+
         MainContentData("MDC", 1, TestMainActivity::class.java),
         MainContentData("Material Design", 2, MDCMainActivity::class.java),
         MainContentData("Button", 2, MDCButtonsActivity::class.java),
+
+
         MainContentData("Drawable 资源", 1, MainActivity::class.java),
         MainContentData("layer-list", 2, DrawableResourceActivity::class.java),
+
+
+        MainContentData("hencorder", 1, MainActivity::class.java),
+        MainContentData("draw练习", 2, Practicedraw1Activity::class.java),
+        MainContentData("paint详解", 2, PaintDetailActivity::class.java),
+        MainContentData("paint详解", 2, PaintDetail1Activity::class.java),
+
+
         MainContentData("动画", 1, MainActivity::class.java),
         MainContentData("属性动画", 2, AnimatorActivity::class.java),
         MainContentData("淡入淡出视图", 2, CrossfadeActivity::class.java),
@@ -73,8 +94,19 @@ class MainActivity : BaseActivity() {
         MainContentData("ViewBinding", 2, ViewBindingActivity::class.java),
         MainContentData("RecyclerView", 2, RecyclerViewBaseActivity::class.java),
         MainContentData("TabHost", 2, com.syd.good.feature.tabhost.TabHostActivity::class.java),
-        MainContentData("TabHostFragment", 2, com.syd.good.feature.tabhost.TabHostFragmentActivity::class.java),
-        MainContentData("TabHost测试", 2, com.syd.good.feature.tabhost.TabHostFActivity::class.java),
+        MainContentData("FragmentTabHost", 2, com.syd.good.feature.tabhost.TabHostFActivity::class.java),
+        MainContentData("FragmentTabHost_viewPager", 2, TabHostActivity::class.java),
+
+
+        MainContentData("View视图相关", 1, com.syd.good.feature.tabhost.TabHostFActivity::class.java),
+        MainContentData("简单ViewGroup", 2, SimpleViewActivity::class.java),
+        MainContentData("简单自定义View", 2, CustomViewActivity::class.java),
+
+
+        MainContentData("IPC", 1, CustomViewActivity::class.java),
+        MainContentData("IPC", 2, IpcActivity::class.java),
+        MainContentData("Socket", 2, com.syd.good.feature.aidl.socket.SocketClientActivity::class.java),
+        MainContentData("BinderPool", 2, BinderPoolActivity::class.java),
 
 
         MainContentData("Carson博客学习", 1, MainActivity::class.java),
@@ -95,6 +127,12 @@ class MainActivity : BaseActivity() {
         MainContentData("菜单", 2, MenuActivity::class.java),
         MainContentData("ConstraintLayout", 2, ConstraintLayoutActivity::class.java),
 
+
+
+        MainContentData("任玉刚学习路线", 1, MainActivity::class.java),
+        MainContentData("01自定义View", 2, ViewShowActivity::class.java),
+
+
         MainContentData("软著申请假页面", 1, MainActivity::class.java),
         MainContentData("Beacon信息", 2, BeaconInfoActivity::class.java),
         MainContentData("登录页面", 2, LoginByPhoneActivity::class.java)
@@ -109,39 +147,37 @@ class MainActivity : BaseActivity() {
         layoutManager.spanSizeLookup = MySanSizeLookup()
         recyclerView.layoutManager = layoutManager
 
-        val intent = Intent(this, TestService::class.java)
-        bindService(intent, MyServiceConnection(), Service.BIND_AUTO_CREATE)
 
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        L.e(TAG, "onCreate")
+
     }
 
     override fun onStart() {
         super.onStart()
-        L.e(TAG, "onStart")
+
     }
 
     override fun onResume() {
         super.onResume()
-        L.e(TAG, "onResume")
+
     }
 
     override fun onPause() {
         super.onPause()
-        L.e(TAG, "onPause")
+
     }
 
     override fun onStop() {
         super.onStop()
-        L.e(TAG, "onStop")
+
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        L.e(TAG, "onDestroy")
+
     }
 
     inner class MySanSizeLookup : SpanSizeLookup() {

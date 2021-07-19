@@ -11,5 +11,7 @@ interface AIDL_Service1 {
     void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
             double aDouble, String aString);
 
+    void test();
+
     void AIDL_Service();
 }

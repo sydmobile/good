@@ -8,7 +8,7 @@ import android.widget.TabHost
 import com.syd.good.R
 import com.syd.good.feature.tabmenu.TabHostActivity
 
-class TabHostActivity : TabActivity() {
+class TabHostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_host)
@@ -18,7 +18,9 @@ class TabHostActivity : TabActivity() {
 
     fun init(){
         // 获取该 activity 里面的 TabHost 组件
-        val tabHost = tabHost
+        val tabHost = findViewById<TabHost>(android.R.id.tabhost)
+        // 初始化 TabHost
+        tabHost.setup()
         val tab1 = tabHost.newTabSpec("tab1")
         tab1.setIndicator("表单1",getDrawable(R.drawable.ic_home))
         tab1.setContent(R.id.tab01)

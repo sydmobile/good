@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    tools:context=".software.MinShengYhMainActivity">
+
+    <RelativeLayout
+        android:background="#3D3E42"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交易明细"
+            android:textSize="16sp"
+            android:textColor="@color/color_white"
+            android:layout_centerInParent="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="导出"
+            android:textSize="12sp"
+            android:textColor="@color/color_white"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="尾号7856"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:drawableRight="@drawable/ic_sanjiao"
+                android:textColor="#333333" />
+        </LinearLayout>
+
+        <View
+            android:layout_gravity="center"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@color/color_split_primary" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="06/2021"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:drawableRight="@drawable/ic_sanjiao"
+                android:textColor="#333333" />
+        </LinearLayout>
+
+        <View
+            android:layout_gravity="center"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@color/color_split_primary" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="更多筛选"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:drawableRight="@drawable/ic_sanjiao"
+                android:textColor="#333333" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_split_primary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rlv" />
+</LinearLayout>

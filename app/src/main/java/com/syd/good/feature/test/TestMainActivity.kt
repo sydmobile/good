@@ -25,7 +25,9 @@ class TestMainActivity : BaseActivity() {
         MainContentData("测试内容", 1, DialogMainStudyActivity::class.java),
         MainContentData("Hello", 2, DialogMainStudyActivity::class.java),
         MainContentData("World", 3, DialogMainStudyActivity::class.java),
-        MainContentData("！", 4, DialogMainStudyActivity::class.java)
+        MainContentData("！", 4, DialogMainStudyActivity::class.java),
+        MainContentData("LayoutInflater", 5, DialogMainStudyActivity::class.java)
+
     )
 
     override fun layoutId() = R.layout.common_activity
@@ -39,7 +41,6 @@ class TestMainActivity : BaseActivity() {
         recyclerView.layoutManager = layoutManager
 
     }
-
 
 
     /** 跨列使用 */
@@ -80,6 +81,14 @@ class TestMainActivity : BaseActivity() {
                         3 -> {
                             Toast.makeText(this@TestMainActivity, data.title, Toast.LENGTH_SHORT)
                                 .show()
+                        }
+                        5 -> {
+                            val view: ViewGroup = window.decorView as ViewGroup
+                            val view1 = layoutInflater.inflate(
+                                R.layout.test_layoutinflater_item,
+                                view,
+                                false
+                            )
                         }
                     }
                 }

@@ -1,7 +1,10 @@
 package com.syd.good.feature.xmlparse;
 
+import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Xml;
 import android.view.LayoutInflater;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -109,6 +112,8 @@ public class XmlParseActivity extends BaseActivity {
         datas.add(new CommonEntity("标题", "DOM解析", CommonType.TYPE_CONTENT_COMMON, null));
         datas.add(new CommonEntity("标题", "SAX解析", CommonType.TYPE_CONTENT_COMMON, null));
         datas.add(new CommonEntity("标题", "PULL解析", CommonType.TYPE_CONTENT_COMMON, null));
+        datas.add(new CommonEntity("标题", "添加Window", CommonType.TYPE_CONTENT_COMMON, null));
+        datas.add(new CommonEntity("标题", "显示Dialog", CommonType.TYPE_CONTENT_COMMON, null));
         CommonAdapter.CallBack callBack = new CommonAdapter.CallBack() {
             @Override
             public void onClick(CommonEntity commonEntity) {
@@ -123,6 +128,18 @@ public class XmlParseActivity extends BaseActivity {
                     case "PULL解析":
                         parseXmlByPull();
                         break;
+                    case "添加Window":
+                        TextView tv = new TextView(XmlParseActivity.this);
+                        tv.setText("woshixxx");
+                        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
+                        layoutParams.height = 1000;
+                        layoutParams.width = 200;
+                        getWindowManager().addView(tv,layoutParams);
+                        break;
+                    case "显示Dialog":
+                        Dialog dialog = new Dialog(XmlParseActivity.this);
+                        dialog.setContentView(R.layout.common_dialog_remind);
+                        dialog.show();
                     default:
                 }
             }

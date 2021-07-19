@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTabHost;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 import com.syd.good.R;
 import com.syd.good.feature.fragment.fragment.FragmentOne;
 import com.syd.good.feature.fragment.fragment.FragmentTwo;
+
+import java.util.concurrent.Executors;
 
 public class TabHostFActivity extends AppCompatActivity {
     private Class[] fragmentArray = {FragmentOne.class, FragmentTwo.class};
@@ -25,7 +29,7 @@ public class TabHostFActivity extends AppCompatActivity {
 
 
         FragmentTabHost mFragmentTabHost = findViewById(android.R.id.tabhost);
-        mFragmentTabHost.setup(this,getSupportFragmentManager(),R.id.realcontent);
+        mFragmentTabHost.setup(this,getSupportFragmentManager(),R.id.fl);
 
 
         // 新建 Tabspec 选项卡并设置 Tab 菜单栏的内容和绑定对应的 Fragment
@@ -35,11 +39,15 @@ public class TabHostFActivity extends AppCompatActivity {
                     .setIndicator(getTabItemView(i));
             // 给 Tab 选项卡添加 文字和按钮，并绑定 Fragment
             mFragmentTabHost.addTab(tabSpec, fragmentArray[i], null);
-            mFragmentTabHost.setTag(i);
-            // 设置 Tab 被选中的时候颜色改变
-//            mFragmentTabHost.getTabWidget().getChildAt(i)
-//                    .setBackgroundResource(R.drawable.selector_tab_background);
         }
+
+        mFragmentTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+                Log.e("TAG",tabId+"");
+            }
+        });
+
     }
 
     private View getTabItemView(int i) {
@@ -50,6 +58,13 @@ public class TabHostFActivity extends AppCompatActivity {
         iv.setImageResource(imageViewArray[i]);
         TextView textView = view.findViewById(R.id.tv_tab);
         textView.setText(textViewArray[i]);
+
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
         return view;
     }
 }

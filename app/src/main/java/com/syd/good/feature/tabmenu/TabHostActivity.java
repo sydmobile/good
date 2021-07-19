@@ -1,8 +1,6 @@
 package com.syd.good.feature.tabmenu;
 
-import android.Manifest;
-import android.content.ComponentName;
-import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +19,6 @@ import com.syd.good.R;
 import com.syd.good.base.BaseActivity;
 import com.syd.good.feature.fragment.fragment.FragmentOne;
 import com.syd.good.feature.fragment.fragment.FragmentTwo;
-import com.syd.good.feature.test.TestMainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +74,7 @@ public class TabHostActivity extends BaseActivity {
         });
         // 实例化 FragmentTabHost 对象并绑定
         mFragmentTabHost = findViewById(android.R.id.tabhost);
-        mFragmentTabHost.setup(this, getSupportFragmentManager(), R.id.vp);
+        mFragmentTabHost.setup(this, getSupportFragmentManager(), R.id.bt);
         mFragmentTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
@@ -107,8 +104,6 @@ public class TabHostActivity extends BaseActivity {
         list.add(fragmentOne);
         list.add(fragmentTwo);
         vp.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager()));
-
-
     }
 
     private View getTabItemView(int i) {

@@ -108,7 +108,35 @@
     <string name="action_settings">Settings</string>
 
     <string name="text_html">Hello &lt;i>我是斜的&lt;/i>&lt;u>下划线&lt;/u></string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_draw_color">drawColor()</string>
+    <string name="title_draw_circle">drawCircle()</string>
+    <string name="title_draw_rect">drawRect()</string>
+    <string name="title_draw_point">drawPoint()</string>
+    <string name="title_draw_oval">drawOval()</string>
+    <string name="title_draw_line">drawLine()</string>
+    <string name="title_draw_round_rect">drawRoundRect()</string>
+    <string name="title_draw_arc">drawArc()</string>
+    <string name="title_draw_path">drawPath()</string>
+    <string name="title_draw_bitmap">drawBitmap()</string>
+    <string name="title_draw_histogram">直方图</string>
+    <string name="title_draw_pie_chart">饼图</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>

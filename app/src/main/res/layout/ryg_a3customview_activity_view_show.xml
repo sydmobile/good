@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fa9f27"
+    tools:context=".ryg.a3customview.ViewShowActivity">
+    <com.syd.good.ryg.a3customview.view.MyView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:default_size="100dp"/>
+    <com.syd.good.ryg.a3customview.view.ClockView
+        android:layout_width="270dip"
+        android:layout_height="270dp"
+        app:clock_backgroundColor="#fa9f27"
+        app:clock_darkColor="#80ffffff"
+        app:clock_lightColor="#ffffff"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"/>
+</LinearLayout>

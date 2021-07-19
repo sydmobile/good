@@ -3,18 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <androidx.fragment.app.FragmentTabHost
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@android:id/tabhost">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@android:id/tabcontent"/>
-    </androidx.fragment.app.FragmentTabHost>
 
     <FrameLayout
-        android:id="@+id/realcontent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/fl" />
+
+    <androidx.fragment.app.FragmentTabHost
+        android:background="@color/colorIcon"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@android:id/tabhost">
+
+        <!--        <LinearLayout-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+        <!--            <FrameLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="0dp"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:id="@+id/fr_realcontent" />-->
+        <!--            <FrameLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="0dp"-->
+        <!--                android:layout_weight="0"-->
+        <!--                android:id="@android:id/tabcontent" />-->
+        <!--            <TabWidget-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:id="@android:id/tabs"/>-->
+        <!--        </LinearLayout>-->
+
+
+    </androidx.fragment.app.FragmentTabHost>
+
+
 </LinearLayout>

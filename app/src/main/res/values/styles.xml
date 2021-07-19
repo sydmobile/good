@@ -29,6 +29,15 @@
         <item name="overlapAnchor">false</item>
     </style>
 
+    <declare-styleable name="MyView">
+        <attr name="default_size" format="dimension"/>
+    </declare-styleable>
 
+    <declare-styleable name="ClockView">
+        <attr name="clock_backgroundColor" format="color"/>
+        <attr name="clock_lightColor" format="color"/>
+        <attr name="clock_darkColor" format="color"/>
+        <attr name="clock_textSize" format="dimension"/>
+    </declare-styleable>
 
 </resources>

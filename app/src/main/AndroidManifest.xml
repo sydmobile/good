@@ -12,6 +12,10 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+    <permission
+        android:name="com.syd.ch.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
+
     <application
         android:name=".App"
         android:allowBackup="false"
@@ -20,8 +24,45 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".feature.tabhost.TabHostFActivity"></activity>
-        <activity android:name=".feature.tabhost.TabHostFragmentActivity" />
+        <activity
+            android:name=".software.login.SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+        <activity android:name=".software.MinShengYhMainActivity" />
+        <activity android:name=".rwx.practicedraw2.PaintDetail1Activity" />
+        <activity android:name=".rwx.practicedraw2.PaintDetailActivity" />
+        <activity android:name=".rwx.practicedraw1.Practicedraw1Activity" />
+        <activity android:name=".ryg.a3customview.ViewShowActivity" />
+        <activity android:name=".feature.aidl.BinderPoolActivity" />
+
+        <service
+            android:name=".feature.aidl.BinderPoolService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote3" />
+
+        <activity android:name=".feature.aidl.socket.SocketClientActivity" />
+
+        <service
+            android:name=".feature.aidl.socket.TCPServerService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".feature.aidl.BookManagerService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".feature.aidl.IpcActivity" />
+
+        <service
+            android:name=".feature.aidl.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote1" />
+
+        <activity android:name=".feature.customview.simple.CustomViewActivity" />
+        <activity android:name=".feature.customview.simple.SimpleViewActivity" />
+        <activity android:name=".feature.test.TestMain2JavaActivity" />
+        <activity android:name=".feature.tabhost.TabHostFActivity" />
         <activity android:name=".feature.tabhost.TabHostActivity" />
         <activity
             android:name=".feature.officialdocument.MenuActivity"
@@ -57,7 +98,6 @@
         <activity android:name=".feature.eventbus.EventBusSecondActivity" />
         <activity android:name=".feature.fragment.FragmentMainActivity" />
         <activity android:name=".feature.fragment.FragmentStaticActivity" />
-        <activity android:name=".feature.test.TestMainActivity" />
         <activity android:name=".feature.mdc.MDCMainActivity" />
         <activity android:name=".feature.mdc.MDCTabLayoutActivity" />
         <activity android:name=".feature.drawableresource.DrawableResourceActivity" />
@@ -91,6 +131,7 @@
             android:process=":remote">
             <intent-filter>
                 <action android:name="com.syd.good.feature.service.AIDL_Service1" />
+                <action android:name="com.syd.good.feature.service.MyIWindowManager" />
             </intent-filter>
         </service>
         <service android:name=".feature.service.TestService" />

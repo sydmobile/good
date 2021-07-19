@@ -27,6 +27,11 @@ public class MyRemoteService extends Service {
         }
 
         @Override
+        public void test() throws RemoteException {
+
+        }
+
+        @Override
         public void AIDL_Service() throws RemoteException {
             L.e("MyRemoteService", "AIDL_Service():客户端通过 AIDL 与 远程后台成功通信");
         }
