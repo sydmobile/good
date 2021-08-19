@@ -23,11 +23,13 @@ import com.syd.good.feature.aidl.IpcActivity
 import com.syd.good.feature.animator.*
 import com.syd.good.feature.customview.simple.CustomViewActivity
 import com.syd.good.feature.customview.simple.SimpleViewActivity
+import com.syd.good.feature.dialog.DialogMainActivity
 import com.syd.good.feature.dialog.DialogMainStudyActivity
 import com.syd.good.feature.drawableresource.DrawableResourceActivity
 import com.syd.good.feature.eventbus.EventBusMainActivity
 import com.syd.good.feature.fragment.FragmentMainActivity
 import com.syd.good.feature.fragment.FragmentStaticActivity
+import com.syd.good.feature.fragment.ShowHideActivity
 import com.syd.good.feature.imageload.PicassoBaseUseActivity
 import com.syd.good.feature.mdc.MDCButtonsActivity
 import com.syd.good.feature.mdc.MDCMainActivity
@@ -62,9 +64,11 @@ class MainActivity : BaseActivity() {
     val datas = listOf(
         MainContentData("Hello", 1, MainActivity::class.java),
         MainContentData("Dialog", 2, DialogMainStudyActivity::class.java),
+        MainContentData("Dialog源码", 2, DialogMainActivity::class.java),
         MainContentData("EventBus", 2, EventBusMainActivity::class.java),
         MainContentData("Fragment", 2, FragmentMainActivity::class.java),
         MainContentData("Fragment 静态添加", 2, FragmentStaticActivity::class.java),
+        MainContentData("Fragment 懒加载", 2, ShowHideActivity::class.java),
         MainContentData("Test", 2, TestMainActivity::class.java),
         MainContentData("测试内容", 2, TestMain2JavaActivity::class.java),
 

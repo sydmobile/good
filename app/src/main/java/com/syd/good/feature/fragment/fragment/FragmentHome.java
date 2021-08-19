@@ -2,6 +2,7 @@ package com.syd.good.feature.fragment.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,8 @@ public class FragmentHome extends Fragment {
     private static final String TAG = "FragmentHome";
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
+    private boolean mIsVisible = true;
+    private boolean mIsLoadData = false;
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -77,6 +79,9 @@ public class FragmentHome extends Fragment {
     public void onResume() {
         super.onResume();
         L.e(TAG, "onResume");
+        if (!mIsLoadData && mIsVisible){
+            loadData();
+        }
     }
 
     @Override
@@ -112,7 +117,14 @@ public class FragmentHome extends Fragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        L.e(TAG, hidden + "");
+        L.e(TAG, "onHiddenChanged:"+hidden);
     }
 
+
+    /**
+     * 加载数据
+     */
+    private void loadData(){
+        Log.e(TAG,"我加载数据啦");
+    }
 }

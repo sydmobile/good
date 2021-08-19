@@ -139,4 +139,9 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
+    <!--Fragment 功能模块-->
+    <string name="fragment_main_home">首页</string>
+    <string name="fragment_main_contacts">通讯录</string>
+    <string name="fragment_main_my">我的</string>
+
 </resources>
