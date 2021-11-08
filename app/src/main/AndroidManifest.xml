@@ -28,7 +28,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".feature.reader.ReaderMainActivity"></activity>
+        <activity android:name=".feature.scroller.ScrollerActivity"></activity>
+        <activity android:name=".feature.test.TestLanguageActivity" />
+        <activity android:name=".feature.jetpack.MainJetPactActivity" />
+        <activity android:name=".feature.ecg.EcgActivity" />
+        <activity android:name=".feature.setting.SettingActivity" />
+        <activity android:name=".feature.reader.ReaderMainActivity" />
         <activity android:name=".feature.dialog.DialogMainActivity" />
         <activity android:name=".feature.fragment.ShowHideActivity" />
         <activity
@@ -44,9 +49,7 @@
         <service
             android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
             android:label="dexopt"
-            android:process=":dexopt" >
-        </service>
-
+            android:process=":dexopt" />
         <service
             android:name=".feature.aidl.BinderPoolService"
             android:enabled="true"
@@ -165,6 +168,10 @@
         <activity
             android:name=".feature.officialdocument.DrawableActivity"
             android:launchMode="singleTask" />
+        <activity
+            android:name=".feature.test.ContentBrowserActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
+        <activity android:name=".feature.test.VideoPlayerActivity" />
     </application>
 
 </manifest>

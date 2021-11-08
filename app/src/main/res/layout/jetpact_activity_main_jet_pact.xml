@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.jetpack.MainJetPactActivity">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv"
+        app:layout_constraintTop_toTopOf="@id/tv" />
+
+    <Button
+        android:id="@+id/bt_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:text=" plus 0ne"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="clear"
+        app:layout_constraintStart_toEndOf="@id/bt_plus"
+        app:layout_constraintTop_toTopOf="@id/bt_plus" />
+
+    <Button
+        android:id="@+id/bt_change_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="改变名字"
+        app:layout_constraintStart_toStartOf="@id/bt_plus"
+        app:layout_constraintTop_toBottomOf="@id/bt_plus" />
+
+    <Button
+        android:id="@+id/bt_get_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获得新用户"
+        app:layout_constraintStart_toEndOf="@id/bt_plus"
+        app:layout_constraintTop_toBottomOf="@id/bt_plus" />
+
+    <TextView
+        android:id="@+id/tv_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="下面是ROOM 内容"
+        app:layout_constraintStart_toStartOf="@id/tv"
+        app:layout_constraintTop_toBottomOf="@id/bt_get_user" />
+
+    <Button
+        android:id="@+id/bt_insert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插入"
+        app:layout_constraintStart_toStartOf="@id/bt_plus"
+        app:layout_constraintTop_toBottomOf="@id/tv_room"/>
+
+    <Button
+        android:id="@+id/bt_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/bt_insert"
+        app:layout_constraintTop_toTopOf="@id/bt_insert"/>
+
+    <Button
+        android:id="@+id/bt_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="修改"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/bt_delete"
+        app:layout_constraintTop_toTopOf="@id/bt_delete"/>
+
+    <Button
+        android:id="@+id/bt_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/bt_update"
+        app:layout_constraintTop_toTopOf="@id/bt_insert"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

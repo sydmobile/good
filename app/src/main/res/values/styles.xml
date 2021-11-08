@@ -2,7 +2,7 @@
 
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
         <!-- App Brand Color-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -39,5 +39,66 @@
         <attr name="clock_darkColor" format="color"/>
         <attr name="clock_textSize" format="dimension"/>
     </declare-styleable>
+
+
+    <declare-styleable name="EcgView">
+        <!--显示模式，左上角还是居中-->
+        <attr name="scaleType">
+            <enum name="normal" value="0" />
+            <enum name="scaleCenter" value="1" />
+        </attr>
+        <!--X轴大网格个数-->
+        <attr name="xGridNum" format="integer" />
+        <!--Y轴大网格个数-->
+        <attr name="yGridNum" format="integer" />
+        <!--每个大网格中的小网格个数-->
+        <attr name="minGridNum" format="integer" />
+        <!--是否绘制小网格-->
+        <attr name="littleGrid" format="boolean" />
+        <!--背景颜色-->
+        <attr name="backgroundColor1" format="color|integer" />
+        <!--大网格颜色-->
+        <attr name="gridColor" format="color|integer" />
+        <!--小网格颜色-->
+        <attr name="littleGridColor" format="color|integer" />
+        <!--心电线的颜色-->
+        <attr name="lineColor" format="color|integer" />
+        <!--心电数据总数-->
+        <attr name="totalSize" format="integer" />
+        <!--最左边线间隔大网格数-->
+        <attr name="startColumn" format="integer" />
+        <!--每两条线之间间隔大网格数-->
+        <attr name="intervalColumn" format="integer" />
+        <!--每个小网格达标的心电值-->
+        <attr name="mvData" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="DragView">
+        <attr name="test" format="integer"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="WaveView">
+        <!--最大值 默认为20，数据为-20 ~ 20-->
+        <attr name="max_value" format="integer" />
+        <!--波形图折线单位宽度，通过修改该参数，控制横坐标的单位 默认 10 -->
+        <attr name="wave_line_width" format="integer" />
+        <!--波形图折线的线宽  默认 3-->
+        <attr name="wave_line_stroke_width" format="integer" />
+        <!--波形图折线的颜色-->
+        <attr name="wave_line_color" format="string" />
+        <!--背景网格图的颜色-->
+        <attr name="grid_line_color" format="string" />
+        <!--背景颜色，默认为黑-->
+        <attr name="wave_background" format="string"/>
+        <!--背景网格是否可见 默认可见-->
+        <attr name="grid_visible" format="boolean" />
+        <!--波形图绘制模式，常规和循环-->
+        <attr name="draw_mode" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="loop" value="1" />
+        </attr>
+    </declare-styleable>
+
 
 </resources>

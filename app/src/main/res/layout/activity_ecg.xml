@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".feature.ecg.EcgActivity">
+    <com.syd.good.feature.ecg.MyEcgShowView
+        android:layout_margin="10dp"
+        android:id="@+id/myecg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <com.syd.good.feature.ecg.EcgShowView
+        android:visibility="gone"
+        android:id="@+id/ecg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_refresh"
+            android:text="开始刷新"/>
+        <Button
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_stop"
+            android:text="停止"/>
+    </LinearLayout>
+
+    <com.syd.good.feature.ecg.EcgShowView1
+        android:id="@+id/ecg1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <TextView
+        android:id="@+id/tv_wave1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="波形图1"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="40"
+        android:progress="20" />
+
+    <com.syd.good.feature.ecg.WaveView
+        android:id="@+id/wave_view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="1"
+        app:draw_mode="loop"
+        app:max_value="30"
+        app:wave_background="#000000"
+        app:wave_line_color="#ffff00"
+        app:wave_line_width="50" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="波形图2"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <com.syd.good.feature.ecg.WaveView
+        android:id="@+id/wave_view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        app:draw_mode="normal"
+        app:grid_visible="true"
+        app:wave_line_stroke_width="5" />
+</LinearLayout>

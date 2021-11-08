@@ -27,17 +27,21 @@ public class PracticePathView extends View {
 
     public PracticePathView(Context context, @Nullable @org.jetbrains.annotations.Nullable AttributeSet attrs) {
         super(context, attrs);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(10);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.GRAY);
-        mPath.addArc(200,200,400,400,0,-180);
-        mPath.arcTo(400,200,600,400,0,-180,true);
-        mPath.moveTo(600,300);
-        mPath.lineTo(400,500);
-        mPath.lineTo(200,300);
+//        mPath.addArc(200,200,400,400,0,-180);
+//        mPath.arcTo(400,200,600,400,0,-180,true);
+//        mPath.moveTo(600,300);
+//        mPath.lineTo(400,500);
+//        mPath.lineTo(200,300);
+        mPath.lineTo(100,100);
+        mPath.lineTo(110,150);
         canvas.drawPath(mPath,mPaint);
     }
 }

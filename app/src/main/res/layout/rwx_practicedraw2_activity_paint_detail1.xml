@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".rwx.practicedraw2.PaintDetail1Activity">
     <com.syd.good.rwx.practicedraw2.PaintDetailView1
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

@@ -1,10 +1,12 @@
 package com.syd.good.feature.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -51,6 +53,8 @@ public class FragmentMainActivity extends BaseActivity implements View.OnClickLi
     FragmentOther fragmentOther;
     @BindView(R.id.bt_add1)
     MaterialButton btAdd1;
+    @BindView(R.id.bt_look)
+    MaterialButton btLook;
 
     @Override
     protected int layoutId() {
@@ -75,6 +79,7 @@ public class FragmentMainActivity extends BaseActivity implements View.OnClickLi
         btHome.setOnClickListener(this);
         btMy.setOnClickListener(this);
         btOther.setOnClickListener(this);
+        btLook.setOnClickListener(this);
 
         //  全Fragment 和 一半的 Fragment
         btAdd.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +129,14 @@ public class FragmentMainActivity extends BaseActivity implements View.OnClickLi
                     fragmentOther = new FragmentOther();
                 }
                 transaction.replace(R.id.fl, fragmentOther);
+                break;
+            case R.id.bt_look:
+                if (fragmentOther == null){
+                    Toast.makeText(this,"已销毁",Toast.LENGTH_SHORT).show();
+                }else {
+                    Log.e(TAG,fragmentOther.getTestEntity().toString()+"=="+fragmentOther.getStrings().toString());
+                    Log.e(TAG,fragmentOther.getStrings().toString());
+                }
             default:
         }
         transaction.commit();

@@ -16,7 +16,6 @@ import com.syd.good.ConstraintLayoutActivity
 import com.syd.good.R
 import com.syd.good.base.BaseActivity
 import com.syd.good.carsonblog.a1socket.SocketClientActivity
-import com.syd.good.carsonblog.a2eventdispatcher.EventDispatcherActivity
 import com.syd.good.data.MainContentData
 import com.syd.good.feature.aidl.BinderPoolActivity
 import com.syd.good.feature.aidl.IpcActivity
@@ -26,11 +25,13 @@ import com.syd.good.feature.customview.simple.SimpleViewActivity
 import com.syd.good.feature.dialog.DialogMainActivity
 import com.syd.good.feature.dialog.DialogMainStudyActivity
 import com.syd.good.feature.drawableresource.DrawableResourceActivity
+import com.syd.good.feature.ecg.EcgActivity
 import com.syd.good.feature.eventbus.EventBusMainActivity
 import com.syd.good.feature.fragment.FragmentMainActivity
 import com.syd.good.feature.fragment.FragmentStaticActivity
 import com.syd.good.feature.fragment.ShowHideActivity
 import com.syd.good.feature.imageload.PicassoBaseUseActivity
+import com.syd.good.feature.jetpack.MainJetPactActivity
 import com.syd.good.feature.mdc.MDCButtonsActivity
 import com.syd.good.feature.mdc.MDCMainActivity
 import com.syd.good.feature.netutils.NetUtilsActivity
@@ -38,13 +39,14 @@ import com.syd.good.feature.officialdocument.AsimpleActivity
 import com.syd.good.feature.officialdocument.DrawableActivity
 import com.syd.good.feature.officialdocument.MenuActivity
 import com.syd.good.feature.recyclerview_study.RecyclerViewBaseActivity
+import com.syd.good.feature.scroller.ScrollerActivity
 import com.syd.good.feature.service.MyServiceConnection
 import com.syd.good.feature.service.ServiceTestActivity
 import com.syd.good.feature.service.TestService
+import com.syd.good.feature.setting.SettingActivity
 import com.syd.good.feature.sqlite.SQLiteBaseActivity
 import com.syd.good.feature.tabmenu.TabHostActivity
-import com.syd.good.feature.test.TestMain2JavaActivity
-import com.syd.good.feature.test.TestMainActivity
+import com.syd.good.feature.test.*
 import com.syd.good.feature.viewbinding.ViewBindingActivity
 import com.syd.good.feature.webview.WebViewUseActivity
 import com.syd.good.feature.xmlparse.JsonParseActivity
@@ -55,6 +57,7 @@ import com.syd.good.rwx.practicedraw2.PaintDetailActivity
 import com.syd.good.ryg.a3customview.ViewShowActivity
 import com.syd.good.software.BeaconInfoActivity
 import com.syd.good.software.login.LoginByPhoneActivity
+import com.syd.good.software.login.SettingsActivity
 import com.syd.good.utils.L
 
 class MainActivity : BaseActivity() {
@@ -69,17 +72,33 @@ class MainActivity : BaseActivity() {
         MainContentData("Fragment", 2, FragmentMainActivity::class.java),
         MainContentData("Fragment 静态添加", 2, FragmentStaticActivity::class.java),
         MainContentData("Fragment 懒加载", 2, ShowHideActivity::class.java),
-        MainContentData("Test", 2, TestMainActivity::class.java),
+        MainContentData("Test", 2, TestMain2JavaActivity::class.java),
         MainContentData("测试内容", 2, TestMain2JavaActivity::class.java),
-
-
+        MainContentData("心电图", 2, EcgActivity::class.java),
         MainContentData("MDC", 1, TestMainActivity::class.java),
         MainContentData("Material Design", 2, MDCMainActivity::class.java),
+        MainContentData("ContentBrowserActivity", 2, ContentBrowserActivity::class.java),
+        MainContentData("VideoPlayerActivity", 2, VideoPlayerActivity::class.java),
+        MainContentData("语言设置", 2, TestLanguageActivity::class.java),
+
+
+
         MainContentData("Button", 2, MDCButtonsActivity::class.java),
 
 
         MainContentData("Drawable 资源", 1, MainActivity::class.java),
         MainContentData("layer-list", 2, DrawableResourceActivity::class.java),
+        MainContentData("到系统页面", 1, MainActivity::class.java),
+
+
+        // JetPack 内容
+        MainContentData("JetPack", 1, MainActivity::class.java),
+        MainContentData("ViewModel", 2, MainJetPactActivity::class.java),
+
+
+
+        MainContentData("go系统页面", 2, SettingActivity::class.java),
+
 
 
         MainContentData("hencorder", 1, MainActivity::class.java),
@@ -105,6 +124,7 @@ class MainActivity : BaseActivity() {
         MainContentData("View视图相关", 1, com.syd.good.feature.tabhost.TabHostFActivity::class.java),
         MainContentData("简单ViewGroup", 2, SimpleViewActivity::class.java),
         MainContentData("简单自定义View", 2, CustomViewActivity::class.java),
+        MainContentData("滑动", 2, ScrollerActivity::class.java),
 
 
         MainContentData("IPC", 1, CustomViewActivity::class.java),
@@ -123,7 +143,6 @@ class MainActivity : BaseActivity() {
         MainContentData("前台服务、通知", 2, ServiceTestActivity::class.java),
         MainContentData("数据库操作", 2, SQLiteBaseActivity::class.java),
         MainContentData("Socket", 2, SocketClientActivity::class.java),
-        MainContentData("事件处理", 2, EventDispatcherActivity::class.java),
 
         MainContentData("官方文档", 1, MainActivity::class.java),
         MainContentData("构建首个应用", 2, AsimpleActivity::class.java),
