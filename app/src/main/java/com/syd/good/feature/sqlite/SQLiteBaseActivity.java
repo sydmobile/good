@@ -4,9 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -14,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.syd.good.R;
 import com.syd.good.base.BaseActivity;
-import com.syd.good.feature.common.CommonAdapter;
-import com.syd.good.feature.common.CommonEntity;
-import com.syd.good.feature.common.CommonType;
+import com.syd.good.feature.a_common.adapter.CommonAdapter;
+import com.syd.good.feature.a_common.bean.CommonEntity;
+import com.syd.good.feature.a_common.CommonType;
 import com.syd.good.utils.L;
 
 import java.util.ArrayList;

@@ -1,10 +1,12 @@
-package com.syd.good.feature.common;
+package com.syd.good.feature.a_common.adapter;
 
 import android.content.Context;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
+import com.syd.good.feature.a_common.CommonType;
+import com.syd.good.feature.a_common.bean.CommonEntity;
 import com.syd.good.utils.adapter.BaseAdapter;
 import com.syd.good.utils.adapter.BaseViewHolder;
 

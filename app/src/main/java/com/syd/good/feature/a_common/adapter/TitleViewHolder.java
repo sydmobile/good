@@ -1,10 +1,11 @@
-package com.syd.good.feature.common;
+package com.syd.good.feature.a_common.adapter;
 
 import android.content.Context;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.syd.good.R;
+import com.syd.good.feature.a_common.bean.CommonEntity;
 import com.syd.good.utils.adapter.BaseViewHolder;
 
 import butterknife.BindView;

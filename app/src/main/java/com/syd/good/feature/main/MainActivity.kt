@@ -1,6 +1,5 @@
 package com.syd.good.feature.main
 
-import android.app.Service
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,11 +11,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
-import com.syd.good.ConstraintLayoutActivity
 import com.syd.good.R
 import com.syd.good.base.BaseActivity
 import com.syd.good.carsonblog.a1socket.SocketClientActivity
 import com.syd.good.data.MainContentData
+import com.syd.good.feature.a_study.StudyDemoActivity
+import com.syd.good.feature.a_template.CommonDemoActivity
+import com.syd.good.feature.a_template.SimpleDemoActivity
+import com.syd.good.feature.a_test.TestDemoActivity
 import com.syd.good.feature.aidl.BinderPoolActivity
 import com.syd.good.feature.aidl.IpcActivity
 import com.syd.good.feature.animator.*
@@ -32,6 +34,7 @@ import com.syd.good.feature.fragment.FragmentStaticActivity
 import com.syd.good.feature.fragment.ShowHideActivity
 import com.syd.good.feature.imageload.PicassoBaseUseActivity
 import com.syd.good.feature.jetpack.MainJetPactActivity
+import com.syd.good.feature.language.LanguageActivity
 import com.syd.good.feature.mdc.MDCButtonsActivity
 import com.syd.good.feature.mdc.MDCMainActivity
 import com.syd.good.feature.netutils.NetUtilsActivity
@@ -39,10 +42,10 @@ import com.syd.good.feature.officialdocument.AsimpleActivity
 import com.syd.good.feature.officialdocument.DrawableActivity
 import com.syd.good.feature.officialdocument.MenuActivity
 import com.syd.good.feature.recyclerview_study.RecyclerViewBaseActivity
+import com.syd.good.feature.recyclerview_study.paging.RecyclerViewLoadingActivity
+import com.syd.good.feature.resultapi.ResultApiDemoActivity
 import com.syd.good.feature.scroller.ScrollerActivity
-import com.syd.good.feature.service.MyServiceConnection
 import com.syd.good.feature.service.ServiceTestActivity
-import com.syd.good.feature.service.TestService
 import com.syd.good.feature.setting.SettingActivity
 import com.syd.good.feature.sqlite.SQLiteBaseActivity
 import com.syd.good.feature.tabmenu.TabHostActivity
@@ -57,38 +60,63 @@ import com.syd.good.rwx.practicedraw2.PaintDetailActivity
 import com.syd.good.ryg.a3customview.ViewShowActivity
 import com.syd.good.software.BeaconInfoActivity
 import com.syd.good.software.login.LoginByPhoneActivity
-import com.syd.good.software.login.SettingsActivity
-import com.syd.good.utils.L
+
+
+const val TITLE_TYPE = 1
+const val COMMON_TYPE = 2
 
 class MainActivity : BaseActivity() {
     override fun layoutId() = R.layout.activity_main
 
-
     val datas = listOf(
-        MainContentData("Hello", 1, MainActivity::class.java),
-        MainContentData("Dialog", 2, DialogMainStudyActivity::class.java),
-        MainContentData("Dialog源码", 2, DialogMainActivity::class.java),
-        MainContentData("EventBus", 2, EventBusMainActivity::class.java),
-        MainContentData("Fragment", 2, FragmentMainActivity::class.java),
-        MainContentData("Fragment 静态添加", 2, FragmentStaticActivity::class.java),
-        MainContentData("Fragment 懒加载", 2, ShowHideActivity::class.java),
-        MainContentData("Test", 2, TestMain2JavaActivity::class.java),
-        MainContentData("测试内容", 2, TestMain2JavaActivity::class.java),
-        MainContentData("心电图", 2, EcgActivity::class.java),
-        MainContentData("MDC", 1, TestMainActivity::class.java),
-        MainContentData("Material Design", 2, MDCMainActivity::class.java),
-        MainContentData("ContentBrowserActivity", 2, ContentBrowserActivity::class.java),
-        MainContentData("VideoPlayerActivity", 2, VideoPlayerActivity::class.java),
-        MainContentData("语言设置", 2, TestLanguageActivity::class.java),
+
+        // 快速模板页面
+        MainContentData("快速测试模板", TITLE_TYPE, null),
+        MainContentData("普通页面功能模板", COMMON_TYPE, CommonDemoActivity::class.java),
+        MainContentData("简单页面模板", 2, SimpleDemoActivity::class.java),
+        MainContentData("测试页面", 2, TestDemoActivity::class.java),
+        MainContentData("快速学习页面", COMMON_TYPE, StudyDemoActivity::class.java),
+
+        // 跨进程
+        MainContentData("IPC", TITLE_TYPE, CustomViewActivity::class.java),
+        MainContentData("IPC", 2, IpcActivity::class.java),
+        MainContentData(
+            "Socket",
+            2,
+            com.syd.good.feature.aidl.socket.SocketClientActivity::class.java
+        ),
+        MainContentData("BinderPool", 2, BinderPoolActivity::class.java),
+
+        // 新知识
+        MainContentData("新知识学习", 1, ViewBindingActivity::class.java),
+        MainContentData("ViewBinding", 2, ViewBindingActivity::class.java),
+        MainContentData("RecyclerView", 2, RecyclerViewBaseActivity::class.java),
+        MainContentData("加载下一页", 2, RecyclerViewLoadingActivity::class.java),
+        MainContentData("Activity Result API", 2, ResultApiDemoActivity::class.java),
 
 
+        // 第三方框架
+        MainContentData("第三方框架", TITLE_TYPE, EventBusMainActivity::class.java),
+        MainContentData("EventBus", COMMON_TYPE, EventBusMainActivity::class.java),
 
+
+        // Material Design
+        MainContentData("Material Design", 1, MDCMainActivity::class.java),
+        MainContentData("主页面", 2, MDCMainActivity::class.java),
         MainContentData("Button", 2, MDCButtonsActivity::class.java),
 
 
-        MainContentData("Drawable 资源", 1, MainActivity::class.java),
+        // 小知识
+        MainContentData("小知识", 1, ContentBrowserActivity::class.java),
+        MainContentData("ContentBrowserActivity", 2, ContentBrowserActivity::class.java),
+        MainContentData("VideoPlayerActivity", 2, VideoPlayerActivity::class.java),
+        MainContentData("语言设置", 2, LanguageActivity::class.java),
+        MainContentData("go系统页面", 2, SettingActivity::class.java),
+
+
+        // 资源文件
+        MainContentData("资源文件知识", 1, MainActivity::class.java),
         MainContentData("layer-list", 2, DrawableResourceActivity::class.java),
-        MainContentData("到系统页面", 1, MainActivity::class.java),
 
 
         // JetPack 内容
@@ -96,17 +124,14 @@ class MainActivity : BaseActivity() {
         MainContentData("ViewModel", 2, MainJetPactActivity::class.java),
 
 
-
-        MainContentData("go系统页面", 2, SettingActivity::class.java),
-
-
-
+        // hencorder 学习内容
         MainContentData("hencorder", 1, MainActivity::class.java),
         MainContentData("draw练习", 2, Practicedraw1Activity::class.java),
         MainContentData("paint详解", 2, PaintDetailActivity::class.java),
         MainContentData("paint详解", 2, PaintDetail1Activity::class.java),
 
 
+        // 动画内容
         MainContentData("动画", 1, MainActivity::class.java),
         MainContentData("属性动画", 2, AnimatorActivity::class.java),
         MainContentData("淡入淡出视图", 2, CrossfadeActivity::class.java),
@@ -114,25 +139,41 @@ class MainActivity : BaseActivity() {
         MainContentData("补间动画", 2, ViewAnimationActivity::class.java),
         MainContentData("插值器", 2, InterpolatorBaseUseActivity::class.java),
         MainContentData("揭露动画", 2, RevealAnimationActivity::class.java),
-        MainContentData("ViewBinding", 2, ViewBindingActivity::class.java),
-        MainContentData("RecyclerView", 2, RecyclerViewBaseActivity::class.java),
+
+
+        // Fragment 相关
+        MainContentData("Fragment相关", TITLE_TYPE, MainActivity::class.java),
+        MainContentData("Fragment", 2, FragmentMainActivity::class.java),
+        MainContentData("Fragment 静态添加", 2, FragmentStaticActivity::class.java),
+        MainContentData("Fragment 懒加载", 2, ShowHideActivity::class.java),
         MainContentData("TabHost", 2, com.syd.good.feature.tabhost.TabHostActivity::class.java),
-        MainContentData("FragmentTabHost", 2, com.syd.good.feature.tabhost.TabHostFActivity::class.java),
+        MainContentData(
+            "FragmentTabHost",
+            2,
+            com.syd.good.feature.tabhost.TabHostFActivity::class.java
+        ),
         MainContentData("FragmentTabHost_viewPager", 2, TabHostActivity::class.java),
 
 
+        // Dialog
+        MainContentData("Dialog", 1, DialogMainStudyActivity::class.java),
+        MainContentData("Dialog", COMMON_TYPE, DialogMainStudyActivity::class.java),
+        MainContentData("Dialog源码", COMMON_TYPE, DialogMainActivity::class.java),
+
+
+        // View 视图相关
         MainContentData("View视图相关", 1, com.syd.good.feature.tabhost.TabHostFActivity::class.java),
         MainContentData("简单ViewGroup", 2, SimpleViewActivity::class.java),
         MainContentData("简单自定义View", 2, CustomViewActivity::class.java),
         MainContentData("滑动", 2, ScrollerActivity::class.java),
 
 
-        MainContentData("IPC", 1, CustomViewActivity::class.java),
-        MainContentData("IPC", 2, IpcActivity::class.java),
-        MainContentData("Socket", 2, com.syd.good.feature.aidl.socket.SocketClientActivity::class.java),
-        MainContentData("BinderPool", 2, BinderPoolActivity::class.java),
+        // 自定义 View
+        MainContentData("自定义View", 1, EcgActivity::class.java),
+        MainContentData("心电图", 2, EcgActivity::class.java),
 
 
+        // Carson 博客学习
         MainContentData("Carson博客学习", 1, MainActivity::class.java),
         MainContentData("XML解析", 2, XmlParseActivity::class.java),
         MainContentData("Json解析", 2, JsonParseActivity::class.java),
@@ -144,18 +185,18 @@ class MainActivity : BaseActivity() {
         MainContentData("数据库操作", 2, SQLiteBaseActivity::class.java),
         MainContentData("Socket", 2, SocketClientActivity::class.java),
 
+        // 官方文档内容
         MainContentData("官方文档", 1, MainActivity::class.java),
         MainContentData("构建首个应用", 2, AsimpleActivity::class.java),
         MainContentData("可绘制对象", 2, DrawableActivity::class.java),
         MainContentData("菜单", 2, MenuActivity::class.java),
-        MainContentData("ConstraintLayout", 2, ConstraintLayoutActivity::class.java),
 
 
-
+        // 任玉刚学习路线
         MainContentData("任玉刚学习路线", 1, MainActivity::class.java),
         MainContentData("01自定义View", 2, ViewShowActivity::class.java),
 
-
+        // 假页面
         MainContentData("软著申请假页面", 1, MainActivity::class.java),
         MainContentData("Beacon信息", 2, BeaconInfoActivity::class.java),
         MainContentData("登录页面", 2, LoginByPhoneActivity::class.java)
@@ -166,7 +207,7 @@ class MainActivity : BaseActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.rlv)
         val adapter = MainAdapter()
         recyclerView.adapter = adapter
-        val layoutManager = GridLayoutManager(this, 4)
+        val layoutManager = GridLayoutManager(this, 3)
         layoutManager.spanSizeLookup = MySanSizeLookup()
         recyclerView.layoutManager = layoutManager
 
@@ -207,7 +248,7 @@ class MainActivity : BaseActivity() {
 
         override fun getSpanSize(position: Int): Int {
             if (datas[position].type == 1) {
-                return 4
+                return 3
             } else {
                 return 1
             }

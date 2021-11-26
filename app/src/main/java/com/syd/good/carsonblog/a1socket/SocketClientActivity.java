@@ -4,14 +4,13 @@ import android.annotation.SuppressLint;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.syd.good.feature.common.CommonActivity;
-import com.syd.good.feature.common.CommonAdapter;
-import com.syd.good.feature.common.CommonEntity;
-import com.syd.good.feature.common.CommonType;
+import com.syd.good.databinding.CommonActivityBinding;
+import com.syd.good.feature.a_common.base.CommonActivity;
+import com.syd.good.feature.a_common.adapter.CommonAdapter;
+import com.syd.good.feature.a_common.bean.CommonEntity;
+import com.syd.good.feature.a_common.CommonType;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -30,17 +29,28 @@ import java.util.List;
  * @version 1.0
  */
 @SuppressLint("NonConstantResourceId")
-public class SocketClientActivity extends CommonActivity {
+public class SocketClientActivity extends CommonActivity<CommonActivityBinding> {
 
     Socket socket;
+
+    @Override
+    protected void initBinding() {
+        mBinding = CommonActivityBinding.inflate(getLayoutInflater());
+    }
+
+
+    @Override
+    protected void initView() {
+
+    }
 
     @Override
     protected List<CommonEntity> createList() {
         List<CommonEntity> list = new ArrayList<>();
         list.add(new CommonEntity("Socket 客户端", "", CommonType.TYPE_TITLE, null));
-        list.add(new CommonEntity("开始连接", "开始连接", CommonType.TYPE_CONTENT_COMMON, null));
-        list.add(new CommonEntity("", "发送数据", CommonType.TYPE_CONTENT_COMMON, null));
-        list.add(new CommonEntity("", "接收数据", CommonType.TYPE_CONTENT_COMMON, null));
+        list.add(new CommonEntity("开始连接", "开始连接", CommonType.TYPE_CONTENT_SPAN_SIZE_1, null));
+        list.add(new CommonEntity("", "发送数据", CommonType.TYPE_CONTENT_SPAN_SIZE_1, null));
+        list.add(new CommonEntity("", "接收数据", CommonType.TYPE_CONTENT_SPAN_SIZE_1, null));
         return list;
     }
 

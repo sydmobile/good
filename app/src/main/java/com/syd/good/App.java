@@ -36,7 +36,7 @@ public class App extends Application {
     ActivityLifecycleCallbacks callbacks = new ActivityLifecycleCallbacks() {
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-            LanguageUtil.getInstance().changeAppLanguage(activity, Locale.CHINESE);
+//            LanguageUtil.getInstance().changeAppLanguage(activity, Locale.CHINESE);
 //            MultiLanguageUtils.setAppLanguage(activity,Locale.CHINA);
             //强制修改应用语言
 //            LanguageUtil.getInstance().

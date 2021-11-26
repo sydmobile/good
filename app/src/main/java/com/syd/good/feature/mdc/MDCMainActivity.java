@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.syd.good.R;
 import com.syd.good.base.BaseActivity;
-import com.syd.good.feature.common.CommonAdapter;
-import com.syd.good.feature.common.CommonEntity;
-import com.syd.good.feature.common.CommonType;
+import com.syd.good.feature.a_common.adapter.CommonAdapter;
+import com.syd.good.feature.a_common.bean.CommonEntity;
+import com.syd.good.feature.a_common.CommonType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,8 +51,8 @@ public class MDCMainActivity extends BaseActivity {
                 new ArrayList<>();
 
         datas.add(new CommonEntity("Material Design", "内容", CommonType.TYPE_TITLE, null));
-        datas.add(new CommonEntity("Material Design", "TabLayout", CommonType.TYPE_CONTENT_COMMON, null));
-        datas.add(new CommonEntity("Material Design", "TabLayout+ViewPager", CommonType.TYPE_CONTENT_COMMON, null));
+        datas.add(new CommonEntity("Material Design", "TabLayout", CommonType.TYPE_CONTENT_SPAN_SIZE_1, null));
+        datas.add(new CommonEntity("Material Design", "TabLayout+ViewPager", CommonType.TYPE_CONTENT_SPAN_SIZE_1, null));
         CommonAdapter.CallBack callBack = new CommonAdapter.CallBack() {
             @Override
             public void onClick(CommonEntity commonEntity) {
@@ -89,7 +89,7 @@ public class MDCMainActivity extends BaseActivity {
                 switch (adapter.getDatas().get(position).getmType()) {
                     case CommonType.TYPE_TITLE:
                         return 4;
-                    case CommonType.TYPE_CONTENT1:
+                    case CommonType.TYPE_CONTENT_SPAN_SIZE_1:
                         return 2;
                     default:
                         return 1;

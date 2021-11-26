@@ -28,8 +28,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".feature.scroller.ScrollerActivity"></activity>
-        <activity android:name=".feature.test.TestLanguageActivity" />
+        <activity android:name=".feature.a_template.SimpleCustomActivity"></activity>
+        <activity android:name=".feature.language.LanguageChangeMainActivity" />
+        <activity android:name=".feature.scroller.ScrollerActivity" />
+        <activity android:name=".feature.language.TestLanguageActivity" />
         <activity android:name=".feature.jetpack.MainJetPactActivity" />
         <activity android:name=".feature.ecg.EcgActivity" />
         <activity android:name=".feature.setting.SettingActivity" />
@@ -109,7 +111,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".feature.dialog.DialogMainStudyActivity" />
-        <activity android:name=".feature.common.CommonActivity" />
+        <activity android:name=".feature.a_common.base.CommonActivity" />
         <activity android:name=".feature.eventbus.EventBusMainActivity" />
         <activity android:name=".feature.eventbus.EventBusSecondActivity" />
         <activity android:name=".feature.fragment.FragmentMainActivity" />
@@ -172,6 +174,15 @@
             android:name=".feature.test.ContentBrowserActivity"
             android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
         <activity android:name=".feature.test.VideoPlayerActivity" />
+        <activity android:name=".feature.a_common.activity.CommonDemoActivity" />
+        <activity android:name=".feature.a_test.TestDemoActivity" />
+        <activity android:name=".feature.a_common.activity.SimpleDemoActivity" />
+        <activity android:name=".feature.a_study.StudyDemoActivity" />
+        <activity android:name=".feature.resultapi.ResultApiDemoActivity" />
+        <activity android:name=".feature.a_template.CommonDemoActivity" />
+        <activity android:name=".feature.a_template.SimpleDemoActivity" />
+        <activity android:name=".feature.recyclerview_study.paging.RecyclerViewLoadingActivity" />
+        <activity android:name=".feature.language.LanguageActivity" />
     </application>
 
 </manifest>

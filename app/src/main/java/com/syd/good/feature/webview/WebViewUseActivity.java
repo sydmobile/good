@@ -11,18 +11,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 
-import androidx.recyclerview.widget.GridLayoutManager;
-
-import com.squareup.picasso.Picasso;
 import com.syd.good.R;
 import com.syd.good.base.BaseActivity;
-import com.syd.good.feature.common.CommonAdapter;
-import com.syd.good.feature.common.CommonEntity;
-import com.syd.good.feature.common.CommonType;
 import com.syd.good.utils.L;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

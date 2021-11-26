@@ -14,6 +14,8 @@
     <color name="colorPrimaryTxt">#333333</color>
     <color name="colorSecondaryTxt">#666666</color>
     <color name="colorThirdTxt">#999999</color>
+    <color name="color_unclick">#DDDDDD</color>
+    <color name="color_unclick_text">#999999</color>
 
 
 

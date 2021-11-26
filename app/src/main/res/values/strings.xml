@@ -185,6 +185,8 @@
         ruous nust apoply tyu cak Uhex sisulutiun munityuw uw dseg\n\n
     </string>
 
-    <string name="base_language">en</string>
+
+    <string name="language_title">english language</string>
+    <string name="base_language">zh</string>
 
 </resources>

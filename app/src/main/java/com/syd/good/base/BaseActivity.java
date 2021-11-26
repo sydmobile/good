@@ -64,6 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 //        }
         setContentView(layoutId());
         mUnbinder = ButterKnife.bind(this);
+
         // 入栈
         ActivityManagerUtils.getInstance().pushOneActivity(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

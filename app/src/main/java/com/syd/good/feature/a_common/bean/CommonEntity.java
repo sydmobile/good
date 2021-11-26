@@ -1,4 +1,4 @@
-package com.syd.good.feature.common;
+package com.syd.good.feature.a_common.bean;
 
 /**
  * <p>
