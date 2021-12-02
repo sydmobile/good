@@ -1,6 +1,15 @@
 package com.syd.good.feature.a_study;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.Settings;
+import android.text.format.DateFormat;
 import android.util.Log;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.syd.good.R;
 import com.syd.good.databinding.CommonActivityBinding;
@@ -22,12 +31,14 @@ import java.util.List;
  * </pre>
  */
 public class StudyDemoActivity extends CommonActivity<CommonActivityBinding> {
-    private final String TITLE = "我是功能标题";
-    private final String FUNCTION1 = "功能11";
+    private final String TITLE = "时间设置";
+    private final String FUNCTION1 = "修改时间格式";
     private final String FUNCTION2 = "功能12";
     private final String TITLE2 = "我是第二个功能";
     private final String FUNCTION21 = "功能21";
     private final String FUNCTION22 = "功能22";
+
+    ActivityResultLauncher<Intent> mLauncher;
 
     @Override
     protected void initBinding() {
@@ -36,7 +47,7 @@ public class StudyDemoActivity extends CommonActivity<CommonActivityBinding> {
 
     @Override
     protected void initView() {
-
+        registerActivityForResult();
     }
 
     @Override
@@ -56,17 +67,16 @@ public class StudyDemoActivity extends CommonActivity<CommonActivityBinding> {
     protected CommonAdapter.CallBack createCallBack() {
 
         return commonEntity -> {
-            switch (commonEntity.getmContent()){
+            switch (commonEntity.getmContent()) {
                 case FUNCTION1:
-                    Log.e("点击了",FUNCTION1);
-                    mBinding.tv1.setText("显示内容：：点击了");
+                    changeTimeFormat();
                     break;
                 case FUNCTION2:
-                    Log.e("点击了",FUNCTION2);
+                    Log.e("点击了", FUNCTION2);
                     mBinding.iv1.setImageResource(R.drawable.ic_home_selected);
                     break;
                 case FUNCTION21:
-                    Log.e("点击了",FUNCTION21);
+                    Log.e("点击了", FUNCTION21);
                     mBinding.et.setText("我是显示内容。。。");
                     break;
                 default:
@@ -74,4 +84,43 @@ public class StudyDemoActivity extends CommonActivity<CommonActivityBinding> {
             }
         };
     }
+
+
+    /**
+     * 修改时间格式
+     */
+    public void changeTimeFormat() {
+        if (Settings.System.canWrite(this)) {
+            if (DateFormat.is24HourFormat(this)) {
+                boolean isSuccess = Settings.System.putString(getContentResolver(), Settings.System.TIME_12_24, "12");
+                mBinding.tv1.setText("isSuccess:" + isSuccess);
+            } else {
+                boolean isSuccess = Settings.System.putString(getContentResolver(),
+                        Settings.System.TIME_12_24, "24");
+                mBinding.tv1.setText("isSuccess:" + isSuccess);
+            }
+        }else {
+            Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+            intent.setData(Uri.parse("package:"+getPackageName()));
+            mLauncher.launch(intent);
+        }
+
+    }
+
+    /**
+     * 注册监听
+     */
+    private void registerActivityForResult() {
+        mLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult()
+                , new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult o) {
+                        if (o.getResultCode() == 0) {
+                            mBinding.tv2.setText("获得权限");
+                        }
+                    }
+                });
+    }
+
+
 }

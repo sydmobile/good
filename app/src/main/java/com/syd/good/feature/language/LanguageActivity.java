@@ -1,9 +1,12 @@
 package com.syd.good.feature.language;
 
+import android.os.RemoteException;
+
 import com.syd.good.R;
 import com.syd.good.databinding.CommonActivitySimpleBinding;
 import com.syd.good.databinding.LanguageActivitySimpleBinding;
 import com.syd.good.feature.a_common.base.SimpleActivity;
+import com.syd.good.utils.LanguageUtil;
 
 import java.util.Locale;
 
@@ -31,8 +34,21 @@ public class LanguageActivity extends SimpleActivity<LanguageActivitySimpleBindi
 
     @Override
     public void initView() {
+        mBinding.btFun1.setText("中文");
+        mBinding.btFun1.setOnClickListener(v -> {
+            LanguageUtils.changeAppLanguage(this,"zh");
+        });
 
+        mBinding.btFun2.setText("英文");
+        mBinding.btFun2.setOnClickListener(v -> {
+            LanguageUtils.changeAppLanguage(this,"en");
+        });
     }
+
+
+    private void switchLanguage(){}
+
+
 
 
 }

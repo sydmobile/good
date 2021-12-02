@@ -62,6 +62,8 @@ public class ResultApiDemoActivity extends SimpleActivity<CommonActivitySimpleBi
                 Toast.makeText(this,"===="+o.getResultCode(),Toast.LENGTH_SHORT).show();
             }
         });
+
+
         mBinding.btFun1.setOnClickListener(v -> {
             Intent intent = new Intent(this, TestDemoActivity.class);
             launcher.launch(intent);
