@@ -186,6 +186,9 @@
         <activity android:name=".feature.a_template.SimpleDemoActivity" />
         <activity android:name=".feature.recyclerview_study.paging.RecyclerViewLoadingActivity" />
         <activity android:name=".feature.language.LanguageActivity" />
+        <activity android:name=".feature.datastructure.DataStructureActivity" />
+        <activity android:name=".feature.ecg.EcgTestActivity" />
+        <activity android:name=".surfaceView.SurfaceViewActivity" />
     </application>
 
 </manifest>

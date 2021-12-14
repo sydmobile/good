@@ -24,10 +24,12 @@ import com.syd.good.feature.aidl.IpcActivity
 import com.syd.good.feature.animator.*
 import com.syd.good.feature.customview.simple.CustomViewActivity
 import com.syd.good.feature.customview.simple.SimpleViewActivity
+import com.syd.good.feature.datastructure.DataStructureActivity
 import com.syd.good.feature.dialog.DialogMainActivity
 import com.syd.good.feature.dialog.DialogMainStudyActivity
 import com.syd.good.feature.drawableresource.DrawableResourceActivity
 import com.syd.good.feature.ecg.EcgActivity
+import com.syd.good.feature.ecg.EcgTestActivity
 import com.syd.good.feature.eventbus.EventBusMainActivity
 import com.syd.good.feature.fragment.FragmentMainActivity
 import com.syd.good.feature.fragment.FragmentStaticActivity
@@ -60,6 +62,7 @@ import com.syd.good.rwx.practicedraw2.PaintDetailActivity
 import com.syd.good.ryg.a3customview.ViewShowActivity
 import com.syd.good.software.BeaconInfoActivity
 import com.syd.good.software.login.LoginByPhoneActivity
+import com.syd.good.surfaceView.SurfaceViewActivity
 
 
 const val TITLE_TYPE = 1
@@ -93,6 +96,7 @@ class MainActivity : BaseActivity() {
         MainContentData("RecyclerView", 2, RecyclerViewBaseActivity::class.java),
         MainContentData("加载下一页", 2, RecyclerViewLoadingActivity::class.java),
         MainContentData("Activity Result API", 2, ResultApiDemoActivity::class.java),
+        MainContentData("surfaceview", 2, SurfaceViewActivity::class.java),
 
 
         // 第三方框架
@@ -171,6 +175,7 @@ class MainActivity : BaseActivity() {
         // 自定义 View
         MainContentData("自定义View", 1, EcgActivity::class.java),
         MainContentData("心电图", 2, EcgActivity::class.java),
+        MainContentData("局部刷新", 2, EcgTestActivity::class.java),
 
 
         // Carson 博客学习
@@ -195,6 +200,10 @@ class MainActivity : BaseActivity() {
         // 任玉刚学习路线
         MainContentData("任玉刚学习路线", 1, MainActivity::class.java),
         MainContentData("01自定义View", 2, ViewShowActivity::class.java),
+
+        // 数据结构
+        MainContentData("数据结构",1,MainActivity::class.java),
+        MainContentData("队列",2, DataStructureActivity::class.java),
 
         // 假页面
         MainContentData("软著申请假页面", 1, MainActivity::class.java),

@@ -1,12 +1,10 @@
-package com.syd.good.feature.a_template;
+package com.syd.good.surfaceView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
-import android.os.Bundle;
-
-import com.syd.good.R;
 import com.syd.good.base.BaseActivity1;
+import com.syd.good.databinding.SurfaceActivityTestBinding;
+
 /**
  * <pre>
  *     @author Mobile
@@ -16,11 +14,11 @@ import com.syd.good.base.BaseActivity1;
  *     version: 1.0
  * </pre>
  */
-public class SimpleCustomActivity extends BaseActivity1<ViewBinding> {
+public class SurfaceViewActivity extends BaseActivity1<SurfaceActivityTestBinding> {
 
     @Override
     protected void initBinding() {
-
+        mBinding = SurfaceActivityTestBinding.inflate(getLayoutInflater());
     }
 
     @Override
