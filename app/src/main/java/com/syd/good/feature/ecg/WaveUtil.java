@@ -1,5 +1,7 @@
 package com.syd.good.feature.ecg;
 
+import android.util.Log;
+
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -16,6 +18,7 @@ import java.util.TimerTask;
 public class WaveUtil {
     private Timer timer;
     private TimerTask timerTask;
+    private static final String TAG = "WaveUtil";
 
     float data = 0f;
 

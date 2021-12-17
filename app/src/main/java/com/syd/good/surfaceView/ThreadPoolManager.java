@@ -57,13 +57,13 @@ public class ThreadPoolManager {
             synchronized (ThreadPoolManager.class){
                 if (mScheduledThreadPool == null){
                     ThreadFactory factory = Executors.defaultThreadFactory();
-                    mScheduledThreadPool = new ScheduledThreadPoolExecutor(3,factory);
+                    mScheduledThreadPool = new ScheduledThreadPoolExecutor(1,factory);
                 }
             }
         }else {
             if (mScheduledThreadPool.isShutdown()){
                 ThreadFactory factory = Executors.defaultThreadFactory();
-                mScheduledThreadPool = new ScheduledThreadPoolExecutor(3,factory);
+                mScheduledThreadPool = new ScheduledThreadPoolExecutor(1,factory);
             }
         }
         return mScheduledThreadPool;

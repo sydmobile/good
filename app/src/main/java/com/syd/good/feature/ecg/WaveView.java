@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -114,8 +115,8 @@ public class WaveView extends View {
     private int gridLineColor = Color.parseColor("#1b4200");
 
     public WaveView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        init(attrs);
+        this(context, attrs,0);
+        Log.e(TAG,"xxxxx1");
     }
 
     public WaveView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -169,6 +170,8 @@ public class WaveView extends View {
 
         mPath = new Path();
 
+        Log.e(TAG,"init:"+WAVE_LINE_WIDTH);
+
     }
 
     @Override
@@ -185,7 +188,10 @@ public class WaveView extends View {
         /** 根据线条长度，最多能绘制多少个数据点*/
         row = (int) (mWidth / WAVE_LINE_WIDTH);
         dataArray = new float[row];
+        Log.e(TAG,"row:"+row+"==="+WAVE_LINE_WIDTH);
     }
+
+    private static final String TAG = "WaveView";
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -314,6 +320,8 @@ public class WaveView extends View {
         row = (int) (mWidth / WAVE_LINE_WIDTH);
         isRefresh = true;
         dataArray = new float[row];
+        Log.e(TAG,"setWaveLineWidth"+row);
+        Log.e(TAG,"setWaveLineWidth"+WAVE_LINE_WIDTH);
         return this;
     }
 
