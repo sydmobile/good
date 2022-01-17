@@ -90,6 +90,7 @@ public class ViewDragHelperTestActivity extends BaseActivity1<DragviewActivityMa
                     leftBound = getPaddingLeft();
                     rightBound = getWidth() - child.getWidth() - getPaddingRight();
                     mCurrentLeft = Math.min(Math.max(left, leftBound), rightBound);
+
                     return mCurrentLeft;
                 }
 
