@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="移动" />
+    <Button
+        android:id="@+id/bt_move_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="移动小球"
+        android:layout_gravity="right"/>
+    <Button
+        android:id="@+id/bt_move_circle_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="移动内部小球"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="right"/>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/iv_image1"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/bg_night"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="center_horizontal">
+        <ImageView
+            android:id="@+id/iv_circle_in"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bg_circle_red"/>
+    </FrameLayout>
+    <ImageView
+        android:id="@+id/iv_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/bg_circle_red"/>
+</FrameLayout>

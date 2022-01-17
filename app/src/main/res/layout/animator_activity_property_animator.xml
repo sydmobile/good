@@ -71,11 +71,82 @@
             android:text="RotationY"
             android:textAllCaps="false"
             android:layout_margin="@dimen/margin_small" />
+        <Button
+            android:id="@+id/bt_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="引用资源"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/margin_small" />
+
+    </LinearLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/bt_pro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PropertyValueHolder"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/margin_small" />
+        <Button
+            android:id="@+id/bt_key_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="keyFrame"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/margin_small" />
+        <Button
+            android:id="@+id/bt_vector_animator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="矢量动画"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/margin_small" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        android:layout_margin="@dimen/margin_small" />
+        <Button
+            android:id="@+id/bt_state_list"
+            android:stateListAnimator="@xml/animator_selector_statelist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stateListAnimator"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/margin_small" />
+
+        <ImageView
+            android:id="@+id/iv_animated_state_list"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/animator_statelist_test"
+            android:layout_margin="@dimen/margin_small" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_animated_vector"
+            android:background="@drawable/animator_animated_vector"/>
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_vector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/animator_vector_anim"/>
+        <ImageView
+            android:id="@+id/iv_appt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/animator_appt_use"
+            android:layout_gravity="right"/>
 
         <Button
             android:layout_gravity="center"

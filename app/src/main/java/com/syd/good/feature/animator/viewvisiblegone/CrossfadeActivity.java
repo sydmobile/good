@@ -1,4 +1,4 @@
-package com.syd.good.feature.animator;
+package com.syd.good.feature.animator.viewvisiblegone;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 /**
  * <p>
  * date: 2020/9/17 17:45
- *
+ * 淡入淡出
  * @author syd
  * @version 1.0
  */

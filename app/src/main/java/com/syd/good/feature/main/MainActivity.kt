@@ -22,11 +22,19 @@ import com.syd.good.feature.a_test.TestDemoActivity
 import com.syd.good.feature.aidl.BinderPoolActivity
 import com.syd.good.feature.aidl.IpcActivity
 import com.syd.good.feature.animator.*
+import com.syd.good.feature.animator.layouttransition.AnimatorLayoutTransitionActivity
+import com.syd.good.feature.animator.moveview.ViewMoveAnimateActivity
+import com.syd.good.feature.animator.viewvisiblegone.CardFlipActivity
+import com.syd.good.feature.animator.viewvisiblegone.CardFlipImageActivity
+import com.syd.good.feature.animator.viewvisiblegone.CircularRevealActivity
+import com.syd.good.feature.animator.viewvisiblegone.CrossfadeActivity
 import com.syd.good.feature.customview.simple.CustomViewActivity
 import com.syd.good.feature.customview.simple.SimpleViewActivity
 import com.syd.good.feature.datastructure.DataStructureActivity
 import com.syd.good.feature.dialog.DialogMainActivity
 import com.syd.good.feature.dialog.DialogMainStudyActivity
+import com.syd.good.feature.dragview.ViewDragHelperTest1Activity
+import com.syd.good.feature.dragview.ViewDragHelperTestActivity
 import com.syd.good.feature.drawableresource.DrawableResourceActivity
 import com.syd.good.feature.ecg.EcgActivity
 import com.syd.good.feature.ecg.EcgTestActivity
@@ -138,8 +146,16 @@ class MainActivity : BaseActivity() {
         // 动画内容
         MainContentData("动画", 1, MainActivity::class.java),
         MainContentData("属性动画", 2, AnimatorActivity::class.java),
+        MainContentData("LayoutTransition", 2, AnimatorLayoutTransitionActivity::class.java),
+
+        MainContentData("视图显示或隐藏", 1, MainActivity::class.java),
         MainContentData("淡入淡出视图", 2, CrossfadeActivity::class.java),
         MainContentData("卡片翻转", 2, CardFlipActivity::class.java),
+        MainContentData("卡片翻转同一布局", 2, CardFlipImageActivity::class.java),
+        MainContentData("揭露动画", 2, CircularRevealActivity::class.java),
+
+        MainContentData("视图移动", 2, ViewMoveAnimateActivity::class.java),
+
         MainContentData("补间动画", 2, ViewAnimationActivity::class.java),
         MainContentData("插值器", 2, InterpolatorBaseUseActivity::class.java),
         MainContentData("揭露动画", 2, RevealAnimationActivity::class.java),
@@ -170,6 +186,8 @@ class MainActivity : BaseActivity() {
         MainContentData("简单ViewGroup", 2, SimpleViewActivity::class.java),
         MainContentData("简单自定义View", 2, CustomViewActivity::class.java),
         MainContentData("滑动", 2, ScrollerActivity::class.java),
+        MainContentData("View拖动", 2, ViewDragHelperTestActivity::class.java),
+        MainContentData("View拖动底部菜单", 2, ViewDragHelperTest1Activity::class.java),
 
 
         // 自定义 View

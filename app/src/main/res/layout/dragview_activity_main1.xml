@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.a_template.CustomTemplateActivity">
+
+    <view
+        class="com.syd.good.feature.dragview.ViewDragHelperTest1Activity$DragLayout"
+        android:layout_width="match_parent"
+        android:id="@+id/drag_layout"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/xx"
+            android:text="@string/info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/colorSecondary"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimarySurface"
+            android:gravity="center" />
+    </view>
+</androidx.constraintlayout.widget.ConstraintLayout>

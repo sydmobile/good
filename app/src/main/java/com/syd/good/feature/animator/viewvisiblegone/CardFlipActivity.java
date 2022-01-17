@@ -1,4 +1,4 @@
-package com.syd.good.feature.animator;
+package com.syd.good.feature.animator.viewvisiblegone;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,7 +20,8 @@ import butterknife.ButterKnife;
 /**
  * <p>
  * date: 2020/9/18 10:11
- * 卡片翻转
+ * 卡片翻转 Fragment 实现
+ *
  * @author syd
  * @version 1.0
  */
@@ -52,19 +53,21 @@ public class CardFlipActivity extends BaseActivity {
     private void flipCard() {
         if (showingBack) {
             getSupportFragmentManager().popBackStack();
+            showingBack = false;
             return;
         }
         showingBack = true;
         getSupportFragmentManager()
                 .beginTransaction()
                 .setCustomAnimations(
-                        R.animator.animator_card_flip_right_in,
-                        R.animator.animator_card_flip_right_out,
-                        R.animator.animator_card_flip_left_in,
-                        R.animator.animator_card_flip_left_out)
+                        R.animator.animator_card_flip_back_in,
+                        R.animator.animator_card_flip_front_out,
+                        R.animator.animator_card_flip_front_in,
+                        R.animator.animator_card_flip_back_out)
                 .replace(R.id.container, new CardBackFragment())
                 .addToBackStack(null)
                 .commit();
+
 
     }
 

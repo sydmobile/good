@@ -31,7 +31,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".feature.a_template.SimpleCustomActivity"></activity>
+        <activity android:name=".feature.a_template.CustomTemplateActivity"></activity>
         <activity android:name=".feature.language.LanguageChangeMainActivity" />
         <activity android:name=".feature.scroller.ScrollerActivity" />
         <activity android:name=".feature.language.TestLanguageActivity" />
@@ -123,8 +123,8 @@
         <activity android:name=".feature.mdc.MDCTabLayoutActivity" />
         <activity android:name=".feature.drawableresource.DrawableResourceActivity" />
         <activity android:name=".feature.animator.AnimatorActivity" />
-        <activity android:name=".feature.animator.CrossfadeActivity" />
-        <activity android:name=".feature.animator.CardFlipActivity" />
+        <activity android:name=".feature.animator.viewvisiblegone.CrossfadeActivity" />
+        <activity android:name=".feature.animator.viewvisiblegone.CardFlipActivity" />
         <activity android:name=".feature.animator.ViewAnimationActivity" />
         <activity android:name=".feature.animator.ViewAnimationLauncherActivity" />
         <activity android:name=".feature.animator.ViewAnimationRightToLeftActivity" />
@@ -189,6 +189,12 @@
         <activity android:name=".feature.datastructure.DataStructureActivity" />
         <activity android:name=".feature.ecg.EcgTestActivity" />
         <activity android:name=".surfaceView.SurfaceViewActivity" />
+        <activity android:name=".feature.animator.layouttransition.AnimatorLayoutTransitionActivity" />
+        <activity android:name=".feature.animator.viewvisiblegone.CardFlipImageActivity" />
+        <activity android:name=".feature.animator.viewvisiblegone.CircularRevealActivity" />
+        <activity android:name=".feature.animator.moveview.ViewMoveAnimateActivity" />
+        <activity android:name=".feature.dragview.ViewDragHelperTestActivity" />
+        <activity android:name=".feature.dragview.ViewDragHelperTest1Activity" />
     </application>
 
 </manifest>

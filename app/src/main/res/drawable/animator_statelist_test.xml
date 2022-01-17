@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id = "@+id/to"
+        android:state_pressed="true"
+        android:drawable="@drawable/ic_category_selected"/>
+    <item android:state_pressed="false"
+        android:id = "@+id/from"
+        android:drawable="@drawable/ic_category_default"/>
+    <item
+        android:drawable="@drawable/ic_category_default"/>
+    <transition
+        android:fromId="@id/from"
+        android:toId="@id/to">
+        <animation-list>
+            <item android:duration="1000"
+                android:drawable="@drawable/ic_home_selected"/>
+            <item android:drawable="@drawable/ic_message_selected"
+                android:duration="1000"/>
+        </animation-list>
+    </transition>
+
+</animated-selector>
