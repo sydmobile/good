@@ -24,6 +24,8 @@ import com.syd.good.feature.aidl.IpcActivity
 import com.syd.good.feature.animator.*
 import com.syd.good.feature.animator.layouttransition.AnimatorLayoutTransitionActivity
 import com.syd.good.feature.animator.moveview.ViewMoveAnimateActivity
+import com.syd.good.feature.animator.practice.AnimBasePracticeActivity
+import com.syd.good.feature.animator.practice.AnimatorBasePracticeActivity
 import com.syd.good.feature.animator.viewvisiblegone.CardFlipActivity
 import com.syd.good.feature.animator.viewvisiblegone.CardFlipImageActivity
 import com.syd.good.feature.animator.viewvisiblegone.CircularRevealActivity
@@ -147,6 +149,8 @@ class MainActivity : BaseActivity() {
         MainContentData("动画", 1, MainActivity::class.java),
         MainContentData("属性动画", 2, AnimatorActivity::class.java),
         MainContentData("LayoutTransition", 2, AnimatorLayoutTransitionActivity::class.java),
+        MainContentData("属性动画练习", 2, AnimatorBasePracticeActivity::class.java),
+        MainContentData("视图动画练习", 2, AnimBasePracticeActivity::class.java),
 
         MainContentData("视图显示或隐藏", 1, MainActivity::class.java),
         MainContentData("淡入淡出视图", 2, CrossfadeActivity::class.java),

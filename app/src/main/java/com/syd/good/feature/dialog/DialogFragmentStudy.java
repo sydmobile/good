@@ -1,5 +1,6 @@
 package com.syd.good.feature.dialog;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,12 @@ public class DialogFragmentStudy extends DialogFragment {
         tvCancel = view.findViewById(R.id.tv_cancel);
         initView();
         return view;
+    }
+
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        return super.onCreateDialog(savedInstanceState);
     }
 
     private void initView(){

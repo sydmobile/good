@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.core.app.NotificationManagerCompat;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -83,7 +84,6 @@ public class ServiceTestActivity extends BaseActivity {
         actionInit(datas, callBack);
         Intent intent = new Intent(this,TestService.class);
         bindService(intent,new MyServiceConnection(), Service.BIND_AUTO_CREATE);
-
     }
 
     public void startBaseNotification() {
@@ -108,6 +108,7 @@ public class ServiceTestActivity extends BaseActivity {
         super.onPause();
 
     }
+
 
     /**
      * 基本内容

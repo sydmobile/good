@@ -3,7 +3,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tl"
@@ -14,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:text="@string/main_title"
             android:id="@+id/tv_annotation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,32 +81,45 @@
         app:layout_constraintStart_toEndOf="@+id/bt_fun2"
         app:layout_constraintTop_toBottomOf="@id/bt_fun1" />
 
-    <TextView
-        android:id="@+id/tv_content1"
-        android:background="@color/colorSecondary"
-        android:padding="15dp"
-        android:textColor="@color/color_white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcard_1"
+        android:layout_margin="@dimen/margin_common"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gl1"
-        android:text="sfsfs"/>
-
-    <TextView
-        android:id="@+id/tv_content2"
-        android:background="@color/colorSecondary"
-        android:padding="15dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/color_white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_gravity="center"
+            tools:text="@string/main_title" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcard_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_content1"
-        android:text="sfsfs"/>
+        app:layout_constraintTop_toBottomOf="@id/mcard_1"
+        android:layout_margin="@dimen/margin_common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_gravity="center"
+            tools:text="@string/main_title" />
+    </com.google.android.material.card.MaterialCardView>
+
     <EditText
-        android:id="@+id/et_content1"
+        android:id="@+id/et"
         android:padding="15dp"
         android:layout_marginTop="10dp"
         android:textColor="@color/colorSecondary"
@@ -112,11 +127,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_content2"
-        android:text="sfsfs"/>
+        app:layout_constraintTop_toBottomOf="@id/mcard_2"
+        android:text="@string/main_title" />
 
     <ImageView
-        android:id="@+id/iv_content1"
+        android:id="@+id/iv"
         android:src="@mipmap/ic_logo_good"
         android:padding="15dp"
         android:layout_marginTop="10dp"
@@ -125,5 +140,5 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_content1" />
+        app:layout_constraintTop_toBottomOf="@id/et" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,7 +57,7 @@ public class ResultApiDemoActivity extends SimpleActivity<CommonActivitySimpleBi
     private void registerResult(){
         ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), o -> {
             if (o.getResultCode() == Activity.RESULT_OK) {
-                mBinding.tvContent1.setText(o.getData().getStringExtra("data"));
+                mBinding.tv1.setText(o.getData().getStringExtra("data"));
             }else {
                 Toast.makeText(this,"===="+o.getResultCode(),Toast.LENGTH_SHORT).show();
             }

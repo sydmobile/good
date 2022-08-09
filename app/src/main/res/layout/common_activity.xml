@@ -72,6 +72,6 @@
             android:id="@+id/et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="我是 EditText...." />
+            android:text="我是 EditText.... 我的id：et" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

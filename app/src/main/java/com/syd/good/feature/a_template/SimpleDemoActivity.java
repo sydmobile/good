@@ -9,7 +9,7 @@ import com.syd.good.feature.a_common.base.SimpleActivity;
  * <pre>
  *     @author Mobile
  *     e-mail : mobilesun516@gmail.com
- *     time   : 2021/11/22 17:24
+ *     time   : 时间
  *     desc   : 简单的快速测试布局 TODO 描述功能
  *     version: 1.0
  * </pre>
