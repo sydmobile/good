@@ -1,0 +1,36 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <view
+        android:id="@+id/content"
+        class="com.syd.good.feature.test.ContentBrowserActivity$Content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:background="#c0ffffff"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="A title goes here"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ff000000" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="16dp" />
+    </FrameLayout>
+</FrameLayout>

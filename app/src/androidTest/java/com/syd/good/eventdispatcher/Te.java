@@ -18,4 +18,22 @@ public class Te {
    public  void run(){
         Log.e("ss","ww");
     }
+
+
+    @Test
+    public void getRandom(){
+        StringBuilder s = new StringBuilder();
+        for (int i = 0;i<100;i++){
+           double nu =  Math.random()*36-18;
+           s.append(nu).append(",");
+        }
+        Log.e("e",s.toString());
+    }
+
+    @Test
+    public void tee(){
+        float i = 10/2;
+        System.out.println(i);
+    }
+
 }

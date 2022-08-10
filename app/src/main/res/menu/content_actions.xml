@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="搜索"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
+    <item android:id="@+id/menu_item_share_action_provider_action_bar"
+        android:title="分享到"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"
+        app:showAsAction="always" />
+    <group android:id="@+id/show_tabs_group"
+        android:checkableBehavior="single">
+        <item android:id="@+id/show_tabs"
+            android:title="Show Tabs"
+            app:showAsAction="never" />
+        <item android:id="@+id/hide_tabs"
+            android:title="Hide Tabs"
+            android:checked="true"
+            app:showAsAction="never" />
+    </group>
+    <group android:id="@+id/stable_layout_group"
+        android:checkableBehavior="all">
+        <item android:id="@+id/stable_layout"
+            android:title="Stable Layout"
+            android:checked="true"
+            app:showAsAction="never" />
+    </group>
+    <item android:id="@+id/action_share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="分享"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/action_sort"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="排序"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item android:id="@+id/action_sort_size"
+                android:icon="@android:drawable/ic_menu_sort_by_size"
+                android:title="排序顺序"
+                android:onClick="onSort" />
+            <item android:id="@+id/action_sort_alpha"
+                android:icon="@android:drawable/ic_menu_sort_alphabetically"
+                android:title="透明度排序"
+                android:onClick="onSort" />
+        </menu>
+    </item>
+</menu>

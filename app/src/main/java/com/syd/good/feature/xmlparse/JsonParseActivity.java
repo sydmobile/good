@@ -6,40 +6,22 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.JsonArray;
 import com.syd.good.R;
 import com.syd.good.base.BaseActivity;
-import com.syd.good.feature.common.CommonAdapter;
-import com.syd.good.feature.common.CommonEntity;
-import com.syd.good.feature.common.CommonType;
+import com.syd.good.feature.a_common.adapter.CommonAdapter;
+import com.syd.good.feature.a_common.bean.CommonEntity;
+import com.syd.good.feature.a_common.CommonType;
 import com.syd.good.utils.L;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 
 import butterknife.BindView;
 

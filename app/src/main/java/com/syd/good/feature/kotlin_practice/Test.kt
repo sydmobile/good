@@ -24,6 +24,8 @@ public class Test : AppCompatActivity() {
         tv_1.text = "xxx"
         tv_2.text = "2222"
         tv_1.text = "1"
+        var s  = "xxxx"
+        s.trim()
     }
 
 }

@@ -39,6 +39,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/bt_other"
             android:text="@string/fragment_other" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_margin="@dimen/margin_small"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_look"
+            android:text="Fragment销毁情况" />
     </LinearLayout>
 
     <LinearLayout

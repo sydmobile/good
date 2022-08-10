@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -43,7 +44,7 @@ public class PaintDetailView extends View {
         super(context, attrs);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaintCommon = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mLinearGradientClamp = new LinearGradient(200,0,400,0, Color.RED,Color.BLUE, Shader.TileMode.CLAMP);
+        mLinearGradientClamp = new LinearGradient(500,0,600,0, Color.RED,Color.BLUE, Shader.TileMode.CLAMP);
         mLinearGradientMirror = new LinearGradient(200,0,400,0,Color.RED,Color.BLUE, Shader.TileMode.MIRROR);
         mLinearGradientRepeat = new LinearGradient(200,0,400,0,Color.RED,Color.BLUE, Shader.TileMode.REPEAT);
         mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.img_header);
@@ -67,9 +68,9 @@ public class PaintDetailView extends View {
         canvas.drawRect(0,500,1000,900,mPaint);
         mPaint.setShader(mLinearGradientRepeat);
         canvas.drawRect(0,1000,1000,1400,mPaint);
-        mPaint.setShader(mBitmapShaderClamp);
-        canvas.drawCircle(400,2000,344,mPaint);
-        canvas.drawRect(100,900,1000,1900,mPaint);
-        canvas.drawBitmap(mBitmap,100,100,mPaintCommon);
+//        mPaint.setShader(mBitmapShaderClamp);
+//        canvas.drawCircle(400,2000,344,mPaint);
+//        canvas.drawRect(100,900,1000,1900,mPaint);
+//        canvas.drawBitmap(mBitmap,100,100,mPaintCommon);
     }
 }

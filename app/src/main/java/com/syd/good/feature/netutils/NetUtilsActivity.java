@@ -10,21 +10,19 @@ import android.content.ServiceConnection;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkInfo;
-import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.syd.good.R;
 import com.syd.good.base.BaseActivity;
-import com.syd.good.feature.common.CommonAdapter;
-import com.syd.good.feature.common.CommonEntity;
-import com.syd.good.feature.common.CommonType;
+import com.syd.good.feature.a_common.adapter.CommonAdapter;
+import com.syd.good.feature.a_common.bean.CommonEntity;
+import com.syd.good.feature.a_common.CommonType;
 import com.syd.good.utils.L;
 
 import java.util.ArrayList;

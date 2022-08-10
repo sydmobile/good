@@ -14,13 +14,13 @@ import com.syd.good.App;
  * date: 2020/4/30 9:04
  *
  * @author syd
- * @version 1.0
+ * version 1.0
  */
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class ScreenUtil {
 
-    private static DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
-    private static DisplayMetrics outMetrics = new DisplayMetrics();
+    private static final DisplayMetrics DISPLAY_METRICS = Resources.getSystem().getDisplayMetrics();
+    private static final DisplayMetrics OUT_METRICS = new DisplayMetrics();
 
     /**
      * 获取逻辑密度 160dpi 返回值为 1
@@ -28,7 +28,7 @@ public class ScreenUtil {
      * @return density
      */
     public static float getDensity() {
-        return displayMetrics.density;
+        return DISPLAY_METRICS.density;
     }
 
 
@@ -38,7 +38,7 @@ public class ScreenUtil {
      * @return 160 240 ...
      */
     public static int getDensityDpi() {
-        return displayMetrics.densityDpi;
+        return DISPLAY_METRICS.densityDpi;
     }
 
     /**
@@ -47,7 +47,7 @@ public class ScreenUtil {
      * @return scaleDensity
      */
     public static float getScaleDensity() {
-        return displayMetrics.scaledDensity;
+        return DISPLAY_METRICS.scaledDensity;
     }
 
     /**
@@ -56,7 +56,7 @@ public class ScreenUtil {
      * @return px
      */
     public static int getWidthPixels() {
-        return displayMetrics.widthPixels;
+        return DISPLAY_METRICS.widthPixels;
     }
 
     /**
@@ -66,7 +66,7 @@ public class ScreenUtil {
      * @return px
      */
     public static int getHeightPixels() {
-        return displayMetrics.heightPixels;
+        return DISPLAY_METRICS.heightPixels;
     }
 
     /**
@@ -75,7 +75,7 @@ public class ScreenUtil {
      * @return dpi
      */
     public static float getYdpi() {
-        return displayMetrics.ydpi;
+        return DISPLAY_METRICS.ydpi;
     }
 
     /**
@@ -84,7 +84,7 @@ public class ScreenUtil {
      * @return dpi
      */
     public static float getXdpi() {
-        return displayMetrics.xdpi;
+        return DISPLAY_METRICS.xdpi;
     }
 
     /**
@@ -131,8 +131,8 @@ public class ScreenUtil {
      * @return int[] 宽高
      */
     public static int[] getRealSize(Activity activity) {
-        activity.getWindowManager().getDefaultDisplay().getRealMetrics(outMetrics);
-        return new int[]{outMetrics.heightPixels, outMetrics.widthPixels};
+        activity.getWindowManager().getDefaultDisplay().getRealMetrics(OUT_METRICS);
+        return new int[]{OUT_METRICS.heightPixels, OUT_METRICS.widthPixels};
     }
 
 
@@ -160,7 +160,6 @@ public class ScreenUtil {
      * @return sw 值
      */
     public static int getSMDP() {
-
         return App.getInstance().getResources().getConfiguration().smallestScreenWidthDp;
     }
 }

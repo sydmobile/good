@@ -1,74 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <androidx.core.widget.NestedScrollView
+    <!--    注意：当前布局不能修改，只能复制粘贴，或者在 RecyclerView 下面添加内容-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rlv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rlv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_margin="@dimen/margin_common"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_margin="@dimen/margin_common"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_small"
-                    android:layout_gravity="center"
-                    tools:text="@string/main_title" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-
-                android:layout_marginLeft="@dimen/margin_common"
-                android:layout_marginRight="@dimen/margin_common"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_small"
-                    android:layout_gravity="center"
-                    tools:text="@string/main_title" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_marginTop="@dimen/margin_common"
-                android:layout_marginLeft="@dimen/margin_common"
-                android:layout_marginRight="@dimen/margin_common"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_small"
-                    android:layout_gravity="center"
-                    tools:text="@string/main_title" />
-            </com.google.android.material.card.MaterialCardView>
-            <ImageView
+            <TextView
+                android:id="@+id/tv_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/iv_1"/>
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+                android:layout_margin="@dimen/margin_small"
+                android:layout_gravity="center"
+                tools:text="@string/main_title" />
+        </com.google.android.material.card.MaterialCardView>
 
-</LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+
+            android:layout_marginLeft="@dimen/margin_common"
+            android:layout_marginRight="@dimen/margin_common"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:layout_gravity="center"
+                tools:text="@string/main_title" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginTop="@dimen/margin_common"
+            android:layout_marginLeft="@dimen/margin_common"
+            android:layout_marginRight="@dimen/margin_common"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:layout_gravity="center"
+                tools:text="@string/main_title" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/ic_logo_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_1" />
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我是 EditText.... 我的id：et" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

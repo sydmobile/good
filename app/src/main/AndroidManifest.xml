@@ -16,6 +16,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
     <permission
         android:name="com.syd.ch.ACCESS_BOOK_SERVICE"
         android:protectionLevel="normal" />
@@ -28,7 +31,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".feature.reader.ReaderMainActivity"></activity>
+        <activity android:name=".feature.a_template.CustomTemplateActivity"></activity>
+        <activity android:name=".feature.language.LanguageChangeMainActivity" />
+        <activity android:name=".feature.scroller.ScrollerActivity" />
+        <activity android:name=".feature.language.TestLanguageActivity" />
+        <activity android:name=".feature.jetpack.MainJetPactActivity" />
+        <activity android:name=".feature.ecg.EcgActivity" />
+        <activity android:name=".feature.setting.SettingActivity" />
+        <activity android:name=".feature.reader.ReaderMainActivity" />
         <activity android:name=".feature.dialog.DialogMainActivity" />
         <activity android:name=".feature.fragment.ShowHideActivity" />
         <activity
@@ -44,9 +54,7 @@
         <service
             android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
             android:label="dexopt"
-            android:process=":dexopt" >
-        </service>
-
+            android:process=":dexopt" />
         <service
             android:name=".feature.aidl.BinderPoolService"
             android:enabled="true"
@@ -106,7 +114,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".feature.dialog.DialogMainStudyActivity" />
-        <activity android:name=".feature.common.CommonActivity" />
+        <activity android:name=".feature.a_common.base.CommonActivity" />
         <activity android:name=".feature.eventbus.EventBusMainActivity" />
         <activity android:name=".feature.eventbus.EventBusSecondActivity" />
         <activity android:name=".feature.fragment.FragmentMainActivity" />
@@ -115,8 +123,8 @@
         <activity android:name=".feature.mdc.MDCTabLayoutActivity" />
         <activity android:name=".feature.drawableresource.DrawableResourceActivity" />
         <activity android:name=".feature.animator.AnimatorActivity" />
-        <activity android:name=".feature.animator.CrossfadeActivity" />
-        <activity android:name=".feature.animator.CardFlipActivity" />
+        <activity android:name=".feature.animator.viewvisiblegone.CrossfadeActivity" />
+        <activity android:name=".feature.animator.viewvisiblegone.CardFlipActivity" />
         <activity android:name=".feature.animator.ViewAnimationActivity" />
         <activity android:name=".feature.animator.ViewAnimationLauncherActivity" />
         <activity android:name=".feature.animator.ViewAnimationRightToLeftActivity" />
@@ -165,6 +173,30 @@
         <activity
             android:name=".feature.officialdocument.DrawableActivity"
             android:launchMode="singleTask" />
+        <activity
+            android:name=".feature.test.ContentBrowserActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
+        <activity android:name=".feature.test.VideoPlayerActivity" />
+        <activity android:name=".feature.a_common.activity.CommonDemoActivity" />
+        <activity android:name=".feature.a_test.TestDemoActivity" />
+        <activity android:name=".feature.a_common.activity.SimpleDemoActivity" />
+        <activity android:name=".feature.a_study.StudyDemoActivity" />
+        <activity android:name=".feature.resultapi.ResultApiDemoActivity" />
+        <activity android:name=".feature.a_template.CommonDemoActivity" />
+        <activity android:name=".feature.a_template.SimpleDemoActivity" />
+        <activity android:name=".feature.recyclerview_study.paging.RecyclerViewLoadingActivity" />
+        <activity android:name=".feature.language.LanguageActivity" />
+        <activity android:name=".feature.datastructure.DataStructureActivity" />
+        <activity android:name=".feature.ecg.EcgTestActivity" />
+        <activity android:name=".surfaceView.SurfaceViewActivity" />
+        <activity android:name=".feature.animator.layouttransition.AnimatorLayoutTransitionActivity" />
+        <activity android:name=".feature.animator.viewvisiblegone.CardFlipImageActivity" />
+        <activity android:name=".feature.animator.viewvisiblegone.CircularRevealActivity" />
+        <activity android:name=".feature.animator.moveview.ViewMoveAnimateActivity" />
+        <activity android:name=".feature.dragview.ViewDragHelperTestActivity" />
+        <activity android:name=".feature.dragview.ViewDragHelperTest1Activity" />
+        <activity android:name=".feature.animator.practice.AnimatorBasePracticeActivity" />
+        <activity android:name=".feature.animator.practice.AnimBasePracticeActivity" />
     </application>
 
 </manifest>

@@ -12,7 +12,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.syd.good.R;
+import com.syd.good.bean.entity.TestEntity;
 import com.syd.good.utils.L;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +33,8 @@ public class FragmentOther extends Fragment {
     private static final String TAG = "FragmentOther";
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    private TestEntity mTestEntity = new TestEntity();
+    private List<String> mStrings;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -50,6 +56,13 @@ public class FragmentOther extends Fragment {
         View view = inflater.inflate(R.layout.frgament_fragment_home, container, false);
         ButterKnife.bind(this, view);
         L.e(TAG, "onCreateView");
+        mTestEntity.setAge(18);
+        mTestEntity.setLike("语文");
+        mStrings = new ArrayList<>();
+        mStrings.add("woshi 1");
+        mStrings.add("woshi 2");
+        mStrings.add("woshi 3");
+        mStrings.add("woshi 4");
         return view;
     }
 
@@ -57,7 +70,7 @@ public class FragmentOther extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         L.e(TAG, "onViewCreated");
-        toolbar.setTitle("我的");
+        toolbar.setTitle("其他");
     }
 
 
@@ -115,4 +128,19 @@ public class FragmentOther extends Fragment {
         L.e(TAG, hidden + "");
     }
 
+    public TestEntity getTestEntity() {
+        return mTestEntity;
+    }
+
+    public void setTestEntity(TestEntity testEntity) {
+        mTestEntity = testEntity;
+    }
+
+    public List<String> getStrings() {
+        return mStrings;
+    }
+
+    public void setStrings(List<String> strings) {
+        mStrings = strings;
+    }
 }

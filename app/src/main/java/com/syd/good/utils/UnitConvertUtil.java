@@ -126,5 +126,14 @@ public class UnitConvertUtil {
 
     }
 
+    /**
+     * 毫米转像素
+     * @param context context
+     * @param mmValue 毫米
+     * @return 像素值
+     */
+    public static float mm2pxByTypedValue(Context context,float mmValue){
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_MM,mmValue,context.getResources().getDisplayMetrics());
+    }
 
 }

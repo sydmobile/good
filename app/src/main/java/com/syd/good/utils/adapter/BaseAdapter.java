@@ -91,6 +91,9 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     }
 
     public void setDatas(List<T> datas) {
+        if (datas == null){
+            return;
+        }
         this.datas = datas;
         notifyDataSetChanged();
     }

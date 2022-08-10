@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.scroller.ScrollerActivity">
+    <com.syd.good.feature.scroller.MyLinearLayout
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:test="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.syd.good.feature.scroller.DragView
+            app:test="4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="300px"
+            android:layout_height="300px"/>
+    </com.syd.good.feature.scroller.MyLinearLayout>
+
+    <com.syd.good.feature.scroller.MyLinearLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:test="2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.syd.good.feature.scroller.DragView
+            app:test="1"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+<!--        <com.syd.good.feature.scroller.DragView-->
+<!--            app:test="2"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:layout_width="300px"-->
+<!--            android:layout_height="300px"/>-->
+<!--        <com.syd.good.feature.scroller.DragView-->
+<!--            app:test="3"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:layout_width="300px"-->
+<!--            android:layout_height="300px"/>-->
+    </com.syd.good.feature.scroller.MyLinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

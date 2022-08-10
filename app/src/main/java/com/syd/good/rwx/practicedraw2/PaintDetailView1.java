@@ -39,19 +39,45 @@ public class PaintDetailView1 extends View {
     public PaintDetailView1(Context context, @Nullable @org.jetbrains.annotations.Nullable AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaintCommon = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.img_header);
-        mBitMapWidth = mBitmap.getWidth();
-        mBitMapHeight = mBitmap.getHeight();
-        mBitmapShaderClamp = new BitmapShader(mBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-        mPaint.setShader(mBitmapShaderClamp);
+//        mPaintCommon = new Paint(Paint.ANTI_ALIAS_FLAG);
+//        mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.img_header);
+//        mBitMapWidth = mBitmap.getWidth();
+//        mBitMapHeight = mBitmap.getHeight();
+//        mBitmapShaderClamp = new BitmapShader(mBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+//        mPaint.setShader(mBitmapShaderClamp);
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawCircle(344,344,344,mPaint);
+//        canvas.drawCircle(344,344,344,mPaint);
+        canvas.drawColor(Color.RED);
+        canvas.drawRect(0,0,100,100,mPaint);
+        canvas.save();
+        canvas.translate(100,100);
+        canvas.rotate(45);
+        canvas.drawRect(0,0,50,50,mPaint);
+        canvas.restore();
+
+        canvas.save();
+        canvas.rotate(45);
+//        canvas.translate(100,100);
+        mPaint.setColor(Color.YELLOW);
+        mPaint.setStrokeWidth(2);
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawRect(0,0,50,50,mPaint);
+        canvas.restore();
+
+        canvas.save();
+        canvas.rotate(45);
+        canvas.translate(100,100);
+        mPaint.setColor(Color.BLUE);
+        mPaint.setStrokeWidth(2);
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawRect(0,0,50,50,mPaint);
+        canvas.restore();
+
 //        canvas.drawRect(0,0,mBitMapWidth,mBitMapHeight,mPaint);
     }
 }
