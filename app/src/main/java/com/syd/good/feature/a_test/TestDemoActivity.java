@@ -32,6 +32,7 @@ public class TestDemoActivity extends CommonActivity<TestActivityMainBinding> {
 
     @Override
     protected void initBinding() {
+        // xinjia
         mBinding = TestActivityMainBinding.inflate(getLayoutInflater());
     }
 
