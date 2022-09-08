@@ -5,10 +5,10 @@ import android.util.Log;
 
 import com.syd.good.R;
 import com.syd.good.databinding.TestActivityMainBinding;
-import com.syd.good.feature.a_common.base.CommonActivity;
-import com.syd.good.feature.a_common.adapter.CommonAdapter;
-import com.syd.good.feature.a_common.bean.CommonEntity;
 import com.syd.good.feature.a_common.CommonType;
+import com.syd.good.feature.a_common.adapter.CommonAdapter;
+import com.syd.good.feature.a_common.base.CommonActivity;
+import com.syd.good.feature.a_common.bean.CommonEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,6 @@ public class TestDemoActivity extends CommonActivity<TestActivityMainBinding> {
 
     @Override
     protected void initView() {
-
     }
 
     @Override
@@ -54,16 +53,16 @@ public class TestDemoActivity extends CommonActivity<TestActivityMainBinding> {
     protected CommonAdapter.CallBack createCallBack() {
 
         return commonEntity -> {
-            switch (commonEntity.getmContent()){
+            switch (commonEntity.getmContent()) {
                 case FUNCTION1:
                     returnResult();
                     break;
                 case FUNCTION2:
-                    Log.e("点击了",FUNCTION2);
+                    Log.e("点击了", FUNCTION2);
                     mBinding.iv1.setImageResource(R.drawable.ic_home_selected);
                     break;
                 case FUNCTION21:
-                    Log.e("点击了",FUNCTION21);
+                    Log.e("点击了", FUNCTION21);
                     mBinding.et.setText("我是显示内容。。。");
                     break;
                 default:
@@ -73,14 +72,13 @@ public class TestDemoActivity extends CommonActivity<TestActivityMainBinding> {
     }
 
 
-
     /**
      * 携带信息返回页面
      */
-    private void returnResult(){
+    private void returnResult() {
         Intent intent = new Intent();
-        intent.putExtra("data","我来自第二个页面");
-        setResult(RESULT_OK,intent);
+        intent.putExtra("data", "我来自第二个页面");
+        setResult(RESULT_OK, intent);
         finish();
     }
 }
