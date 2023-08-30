@@ -1,6 +1,8 @@
 package com.syd.good.feature.a_test;
 
+import android.animation.StateListAnimator;
 import android.content.Intent;
+import android.graphics.drawable.AnimatedStateListDrawable;
 import android.util.Log;
 
 import com.syd.good.R;
@@ -40,6 +42,8 @@ public class TestDemoActivity extends CommonActivity<TestActivityMainBinding> {
     protected void initView() {
     }
 
+
+
     @Override
     protected List<CommonEntity> createList() {
         List<CommonEntity> list = new ArrayList<>();
@@ -70,7 +74,9 @@ public class TestDemoActivity extends CommonActivity<TestActivityMainBinding> {
 
             }
         };
+
     }
+
 
 
     /**

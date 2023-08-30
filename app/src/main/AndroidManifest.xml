@@ -197,6 +197,7 @@
         <activity android:name=".feature.dragview.ViewDragHelperTest1Activity" />
         <activity android:name=".feature.animator.practice.AnimatorBasePracticeActivity" />
         <activity android:name=".feature.animator.practice.AnimBasePracticeActivity" />
+        <activity android:name=".feature.threadpool.ThreadPoolMainActivity" />
     </application>
 
 </manifest>

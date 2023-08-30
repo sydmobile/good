@@ -1,4 +1,4 @@
-package com.syd.good.feature.a_template;
+package com.syd.good.feature.threadpool;
 
 import android.util.Log;
 
@@ -11,20 +11,24 @@ import com.syd.good.feature.a_common.bean.CommonEntity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * <pre>
  *     @author Mobile
  *     e-mail : mobilesun516@gmail.com
  *     time   : 2021/11/22 14:54
- *     //TODO 功能描述
- *     desc   : 复杂的模板页面
+ *     desc   : 线程池学习主页面
  *     version: 1.0
  * </pre>
  */
-public class CommonDemoActivity extends CommonActivity<CommonActivityBinding> {
-    private final String TITLE = "我是功能标题";
-    private final String FUNCTION1 = "功能11";
+public class ThreadPoolMainActivity extends CommonActivity<CommonActivityBinding> {
+    private final String TITLE = "线程池";
+    private final String FUNCTION1 = "fixedThreadPool";
     private final String FUNCTION2 = "功能12";
     private final String TITLE2 = "我是第二个功能";
     private final String FUNCTION21 = "功能21";
@@ -79,5 +83,11 @@ public class CommonDemoActivity extends CommonActivity<CommonActivityBinding> {
 
             }
         };
+    }
+
+    private void fixedThreadPoolStudy(){
+
+
+
     }
 }
